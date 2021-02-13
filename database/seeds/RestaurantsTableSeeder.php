@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Restaurant;
-
+use App\User;
 use Faker\Generator as Faker;
 
 
@@ -16,31 +16,22 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        //popoliamo la tabella
-        //$restaurants =Restaurant::all();
+        
+        $users = User::all();
 
-        for ($i = 0; $i < 5; $i++) {
-            //crea istanza
-            $restaurants = new Restaurant();
+        foreach ($users as $user) {
+            //crea nuova istanza
+            $newRestaurant = new Restaurant();
 
             //set dati colonne
-            $restaurants->name = $faker->paragraphs(1, true);
-            $restaurants->address = $faker->paragraphs(1, true);
-           
+            $newRestaurant->user_id = $user->id;
+            $newRestaurant->name = $faker->name();
+            $newRestaurant->address = $faker->address();
+            $newRestaurant->p_iva = $faker->unique()->regexify('[0-9]{11}');
+            $newRestaurant->phone = $faker->unique()->phoneNumber();
 
-            //salvataggio dati
-            $restaurants->save();
+            $newRestaurant->save();
 
-            /* $restaurants =Restaurant::all();
-
-            foreach ($restaurants as $restaurant) {
-                // creazione instanza
-            $newRestaurant= new Restaurant();
-                // set valori colonne
-            $newRestaurant->name = $faker->sentences(2);
-            $newRestaurant->address = $faker->sentences(2);
-                // salvataggio
-            $newRestaurant->save(); */
         }
     }
 }

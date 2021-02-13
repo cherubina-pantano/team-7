@@ -18,8 +18,8 @@ class CreateRestaurantsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('name', 50);
             $table->string('address', 100);
-            $table->char('p_iva', 11)->unique();
-            $table->string('phone', 20);
+            $table->char('p_iva', 13)->unique();
+            $table->string('phone', 20)->unique();
             $table->timestamps();
 
             //Relazione
