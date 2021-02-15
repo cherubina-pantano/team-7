@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Seeder;
-// use App\Restaurant;
 use App\Dish;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
@@ -15,7 +14,9 @@ class DishesTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-          for ($i = 0; $i < 10; $i++ ) {
+        $dishes = Dish::all(); 
+
+          foreach ($dishes as $dish) {
 
             $newDish = new Dish();
 
