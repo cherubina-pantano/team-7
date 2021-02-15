@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    //
-   /*  public function restaurant() {
-        return $this->belongsTo('App\Restaurant');
-    } */
+    
+    public function types() {
+        return $this->belongsToMany('App\Type');
+    } 
 }
