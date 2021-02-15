@@ -17,13 +17,13 @@ class CreateDishesTable extends Migration
             $table->id();
             $table->unsignedBigInteger('restaurant_id');
             $table->string('name', 100);
-            $table->string('category', 50);
-            $table->string('ingredients', 100);
-            $table->text('description');
-            $table->string('path_img')->nullable();
-            $table->float('price', 6,2);
-            $table->boolean('gluten');
-            $table->boolean('available');
+            // $table->string('category', 50);
+            // $table->string('ingredients', 100);
+            // $table->text('description');
+            // $table->string('path_img')->nullable();
+            // $table->float('price', 6,2);
+            // $table->boolean('gluten');
+            // $table->boolean('available');
             $table->timestamps();
 
             $table->foreign('restaurant_id')
