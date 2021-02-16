@@ -30,7 +30,7 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.restaurants.create');
     }
 
     /**
@@ -41,7 +41,25 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        //dd($data);
+
+        $request->validate($this->ruleValidation());
+
+        // prendere l'id attivo
+        $data['user_id'] = Auth::id();
+        $newRestaurant = new Restaurant();
+        $newRestaurant->fill($data);
+
+        $saved = $newRestaurant->save();
+            if($saved) {
+                return redirect()->route('admin.home');
+            }
+            else {
+                return redirect()-route('admin.restaurants.create');
+            }
+        
     }
 
     /**
@@ -52,7 +70,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -63,7 +81,8 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $restaurant = Restaurant::find($id);
+        return view('admin.restaurants.edit', compact('restaurant'));
     }
 
     /**
@@ -75,7 +94,18 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate($this->ruleValidation());
+
+        $data = $request->all();
+
+        $restaurant = Restaurant::find($id);
+        $updated = $restaurant->update($data);
+        if($updated) {
+            return redirect()->route('admin.restaurants.index', $restaurant->id);
+        }
+        else {
+            return redirect()->route('admin.home');
+        }
     }
 
     /**
@@ -88,4 +118,13 @@ class RestaurantController extends Controller
     {
         //
     }
+
+    private function ruleValidation() {
+        return [
+            'name'=>'required',
+            'address'=>'required',
+            'phone'=>'required',
+            'p_iva'=>'required',
+        ];
+    } 
 }
