@@ -15,11 +15,14 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
+
 
 // Area riservata -- rotte
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
+    Route::get('/', 'HomeController@index')->name('home');
+});
+
+//Route::get('/home', 'HomeController@index')->name('home');
