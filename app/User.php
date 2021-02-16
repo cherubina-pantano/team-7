@@ -37,4 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // relazione db
+    public function restaurants() {
+        return $this->hasMany('App\Restaurant');
+    }
 }

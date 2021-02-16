@@ -23,6 +23,11 @@ Auth::routes();
 
 Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->group(function() {
     Route::get('/', 'HomeController@index')->name('home');
+
+    //rotte crud
+    Route::resource('restaurants', 'RestaurantController');
 });
+
+
 
 //Route::get('/home', 'HomeController@index')->name('home');
