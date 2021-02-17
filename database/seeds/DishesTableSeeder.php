@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Dish;
-use App\Restaurant;
 use Illuminate\Support\Str;
+use App\Restaurant;
+use App\Dish;
 use Faker\Generator as Faker;
 
 
@@ -20,7 +20,8 @@ class DishesTableSeeder extends Seeder
         $restaurants = Restaurant::all();
 
         foreach ($restaurants as $restaurant) {
-             $newDish = new Dish();
+             $newDish = new Dish();        
+                
 
              $newDish->restaurant_id = $restaurant->id;
              $newDish->name = $faker->word();
@@ -34,6 +35,7 @@ class DishesTableSeeder extends Seeder
              $newDish->slug = Str::slug($newDish->name, '-');
 
              $newDish->save();
+
         };
 
     }
