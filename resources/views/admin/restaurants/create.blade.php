@@ -50,8 +50,6 @@
                         <label for="type-{{$type->id}}">{{$type->type}}</label>
                     </div>
                @endforeach
-
-
             </div>
 
 

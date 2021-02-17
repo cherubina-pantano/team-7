@@ -91,7 +91,7 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::find($id);
         $types = Type::all();
-        return view('admin.restaurants.edit', compact('restaurant'));
+        return view('admin.restaurants.edit', compact('restaurant', 'types'));
     }
 
     /**
@@ -145,8 +145,8 @@ class RestaurantController extends Controller
         return [
             'name'=>'required',
             'address'=>'required',
-            'phone'=>'required',
-            'p_iva'=>'required',
+            'phone'=>'required | unique | size:11',
+            'p_iva'=>'required | unique| size:11',
         ];
     }
 }
