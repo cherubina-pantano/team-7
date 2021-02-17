@@ -26,6 +26,8 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->
 
     //rotte crud
     Route::resource('restaurants', 'RestaurantController');
+
+    Route::resource('dishes', 'DishController');
 });
 
 

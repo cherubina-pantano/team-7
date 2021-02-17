@@ -20,6 +20,10 @@
         </div>
     </div>
 
+    <a href="{{route('admin.dishes.index')}}" ><input type="submit" class='btn btn-primary' value='Vedi menu'></a>
+
+    <a href="{{route('admin.dishes.create')}}" ><input type="submit" class='btn btn-primary' value='Nuovo piatto'></a>
+
     @if(session('restaurant-deleted'))
             <div class = "alert alert-success mt-5">
                  Restaurant '{{session('restaurant-deleted')}}' é stato cancellato con successo

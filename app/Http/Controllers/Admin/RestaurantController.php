@@ -79,7 +79,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-
+        
     }
 
     /**

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Restaurant;
 use App\Type;
+use App\Dish;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -15,6 +16,7 @@ class HomeController extends Controller
         ->orderBy('created_at', 'desc')
         ->get();
 
-        return view('admin.home', compact('restaurants'));
+        $dishes = Dish::all();
+        return view('admin.home', compact('restaurants','dishes'));
     }
 }
