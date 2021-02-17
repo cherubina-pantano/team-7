@@ -22,7 +22,6 @@ class DishesTableSeeder extends Seeder
         foreach ($restaurants as $restaurant) {
              $newDish = new Dish();        
                 
-
              $newDish->restaurant_id = $restaurant->id;
              $newDish->name = $faker->word();
              $newDish->category=$faker->word(2);

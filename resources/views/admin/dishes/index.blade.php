@@ -18,8 +18,8 @@
                 <p>{{$dish->ingredients}}</p>
                 <p>{{$dish->description}}</p>
                 <p>{{$dish->price}}</p>
-                <p>{{$dish->gluten}}</p>
-                <p>{{$dish->available}}</p>
+                {{-- <p>{{$dish->gluten}}</p>
+                <p>{{$dish->available}}</p> --}}
 
                 {{-- <div>
                     @if (!empty($dish->path_img))

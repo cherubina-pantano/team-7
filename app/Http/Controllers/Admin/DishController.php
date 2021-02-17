@@ -48,14 +48,12 @@ class DishController extends Controller
         $data['restaurant_id'] = Auth::id();
 
         $newDish = new Dish();
-        $newDish->fill($data);
-        $saved = $newDish->save();
         
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
-
-        $data['price'] = (int)$data['price'];
-
-        // dd($data);
+        
+        $data['gluten'] = ($data['gluten'] == 'true') ? 1 : 0;
+        
+        $newDish->fill($data);
 
         $request->validate([
             'name' => 'required', 
@@ -63,11 +61,12 @@ class DishController extends Controller
             'ingredients' => 'required', 
             'description' => 'required', 
             'price' => 'required', 
-            // 'gluten' => 'required', 
+            'gluten' => 'required', 
             'available' => 'required',
          ]);
 
-        
+         $saved = $newDish->save();
+
         if($saved) {
             return redirect()->route('admin.dishes.index');
         } else {

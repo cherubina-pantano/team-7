@@ -56,7 +56,7 @@
                 <input class='form-control' type="text" name="price" id="price" value="{{old('price')}}">
             </div>
 
-            {{-- <label>Glutine:</label>
+            <label>Glutine:</label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="gluten" id="gluten1" value="true" checked>
                 <label class="form-check-label" for="gluten1">
@@ -67,7 +67,7 @@
                 <input class="form-check-input" type="radio" name="gluten" id="gluten2" value="false" checked>
                 <label class="form-check-label" for="gluten2">
                   No
-            </label> --}}
+            </label>
 
             <label>Disponibilità:</label>
             <div class="form-check">
