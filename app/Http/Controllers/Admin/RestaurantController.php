@@ -6,6 +6,7 @@ use App\Restaurant;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Type;
 
 class RestaurantController extends Controller
 {
@@ -16,11 +17,12 @@ class RestaurantController extends Controller
      */
     public function index()
     {
+
         $restaurants = Restaurant::where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('admin.restaurants.index', compact('restaurants'));    
+        return view('admin.restaurants.index', compact('restaurants'));
     }
 
     /**
@@ -30,7 +32,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $types = Type::all();
+
+        return view('admin.restaurants.create', compact('types'));
     }
 
     /**
@@ -54,12 +58,16 @@ class RestaurantController extends Controller
 
         $saved = $newRestaurant->save();
             if($saved) {
+
+            if(!empty($data['types'])){
+                $newRestaurant->types()->attach($data['types']);
+            }
                 return redirect()->route('admin.home');
             }
             else {
                 return redirect()-route('admin.restaurants.create');
             }
-        
+
     }
 
     /**
@@ -70,7 +78,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -82,6 +90,7 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurant = Restaurant::find($id);
+        $types = Type::all();
         return view('admin.restaurants.edit', compact('restaurant'));
     }
 
@@ -101,6 +110,11 @@ class RestaurantController extends Controller
         $restaurant = Restaurant::find($id);
         $updated = $restaurant->update($data);
         if($updated) {
+            if(!empty($data['types'])){
+                $restaurant->types()->sync($data['types']);
+            }else{
+                $restaurant->types()->detach();
+            }
             return redirect()->route('admin.restaurants.index', $restaurant->id);
         }
         else {
@@ -114,10 +128,18 @@ class RestaurantController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Restaurant $restaurant)
     {
-        //
-    }
+        $name = $restaurant ->name;
+        $restaurant->types()->detach();
+        $deleted = $restaurant->delete();
+
+        if($deleted) {
+            return redirect()->route('admin.home')->with('restaurant-deleted', $name);
+        }else{
+            'ops, qualcosa è andato storto!';
+        }
+   }
 
     private function ruleValidation() {
         return [
@@ -126,5 +148,5 @@ class RestaurantController extends Controller
             'phone'=>'required',
             'p_iva'=>'required',
         ];
-    } 
+    }
 }

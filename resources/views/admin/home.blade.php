@@ -19,5 +19,12 @@
             </div>
         </div>
     </div>
+
+    @if(session('restaurant-deleted'))
+            <div class = "alert alert-success mt-5">
+                 Restaurant '{{session('restaurant-deleted')}}' é stato cancellato con successo
+            </div>
+        @endif
+
 </div>
 @endsection
