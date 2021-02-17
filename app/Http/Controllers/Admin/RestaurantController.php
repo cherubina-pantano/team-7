@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Type;
+use Illuminate\Validation\Rule;
 
 class RestaurantController extends Controller
 {
@@ -106,7 +107,15 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate($this->ruleValidation());
+        $request->validate(
+            ['name'=>'required',
+            'address'=>'required',
+            'phone'=>['required',
+                Rule::unique('restaurants')->ignore($id), 
+            'size:10'],
+            'p_iva'=>['required',
+                Rule::unique('restaurants')->ignore($id), 
+            'size:11']]);
 
         $data = $request->all();
 
