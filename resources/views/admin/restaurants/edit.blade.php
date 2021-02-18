@@ -33,7 +33,7 @@
             <div class='form-group'>
                 <label for="p_iva">Partita Iva</label>
 
-                <input class='form-control' type="text" name="p_iva" id="p_iva" value="{{old('p_iva', $restaurant->p_iva)}}">
+                <input disabled class='form-control' type="text" name="p_iva" id="p_iva" value="{{old('p_iva', $restaurant->p_iva)}}">
             </div>
 
             <div class='form-group'>

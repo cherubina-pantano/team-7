@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Dish;
+use Illuminate\Support\Facades\Auth;
 
 class GuestController extends Controller
 {
@@ -50,11 +51,16 @@ class GuestController extends Controller
      */
     public function show($id)
     {
-        $restaurants = Restaurant::find($id)->get();
+        // $restaurants = Restaurant::where('id', Auth::id())->get();
 
+        // $dishes = Dish::all();
+
+        // $dishes = Dish::where('restaurant_id', Auth::id())->get();
+ 
         $dishes = Dish::find($id)->get();
-
-        return view('guests.show', compact('restaurants', 'dishes'));
+        
+        // dd($dishes);
+        return view('guests.show', compact('dishes'));
     }
 
     /**

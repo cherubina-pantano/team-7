@@ -113,9 +113,10 @@ class RestaurantController extends Controller
             'phone'=>['required',
                 Rule::unique('restaurants')->ignore($id), 
             'size:10'],
-            'p_iva'=>['required',
-                Rule::unique('restaurants')->ignore($id), 
-            'size:11']]);
+            // 'p_iva'=>['required',
+            //     Rule::unique('restaurants')->ignore($id), 
+            // 'size:11']
+            ]);
 
         $data = $request->all();
 

@@ -4,8 +4,15 @@
 <div class="container">
    <h1>Piatti</h1>
 
-   @foreach($restaurants->dishes as $dish)
+   {{-- @foreach($dishes as $dish->restaurant_id)
         <h3>{{ $dish->name}}</h3>
-   @endforeach
+   @endforeach --}}
+
+   @forelse ($dishes as $dish->restaurant_id)
+        <h4>{{ $dish->name }}</h4>
+   @empty
+       <p>Nessun piatto è stato creato</p>
+   @endforelse
+
 </div>
 @endsection

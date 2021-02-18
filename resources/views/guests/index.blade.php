@@ -8,6 +8,9 @@
       <a href="{{route('guests.show', $restaurant->id)}}">
           <h3>{{ $restaurant->name }}</h3>
       </a>
+
+      <p>{{$restaurant->address}}</p>
+      <p>{{$restaurant->phone}}</p>
    @endforeach
 </div>
 @endsection

@@ -21,7 +21,7 @@ class DishesTableSeeder extends Seeder
 
         foreach ($restaurants as $restaurant) {
 
-            for($i = 0; $i < 3; $i++) {
+            
                 $newDish = new Dish();        
                     
                 $newDish->restaurant_id = $restaurant->id;
@@ -37,7 +37,7 @@ class DishesTableSeeder extends Seeder
     
                 $newDish->save();
 
-            }
+            
 
         };
 
