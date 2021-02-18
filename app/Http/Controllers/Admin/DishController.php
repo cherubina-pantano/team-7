@@ -82,7 +82,8 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        //
+        
+
     }
 
     /**
@@ -93,7 +94,9 @@ class DishController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dish = Dish::find($id);
+
+        return view('admin.dishes.edit', compact('dish'));
     }
 
     /**
@@ -105,7 +108,25 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'ingredients' => 'required',
+            'category' => 'required',
+            'price' => 'required',
+            // 'gluten' => 'required'
+        ]);
+
+        $dish = Dish::find($id);
+
+        $updated = $dish->update($data);
+        if($updated) {
+            return redirect()->route('admin.dishes.index', $dish->id);
+        } else {
+            return redirect()->route('admin.dishes.edit');
+        }
     }
 
     /**
