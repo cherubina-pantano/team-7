@@ -65,7 +65,7 @@ class DishController extends Controller
             'available' => 'required',
          ]);
 
-         $saved = $newDish->save();
+        $saved = $newDish->save();
 
         if($saved) {
             return redirect()->route('admin.dishes.index');
@@ -116,8 +116,12 @@ class DishController extends Controller
             'ingredients' => 'required',
             'category' => 'required',
             'price' => 'required',
-            // 'gluten' => 'required'
+            'gluten' => 'required'
         ]);
+
+        $data['available'] = ($data['available'] == 'true') ? 1 : 0;
+        
+        $data['gluten'] = ($data['gluten'] == 'true') ? 1 : 0;
 
         $dish = Dish::find($id);
 
