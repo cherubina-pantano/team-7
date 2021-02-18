@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     public function run(Faker $faker)
     {
         //
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $newUser = new User();
 
@@ -23,7 +23,6 @@ class UsersTableSeeder extends Seeder
             $newUser->password = $faker->password();
 
             $newUser->save();
-
 
         }
     }

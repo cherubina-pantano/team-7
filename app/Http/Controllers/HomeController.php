@@ -9,8 +9,7 @@ class HomeController extends Controller
 {
     public function index() {
 
-        $restaurants = Restaurant::all();
-        return view('guests.home', compact('restaurants'));
+        return view('guests.home');
         
     }
 }

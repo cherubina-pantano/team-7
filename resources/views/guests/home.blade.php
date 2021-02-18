@@ -4,8 +4,12 @@
 <div class="container">
    <h1>homepage</h1>
 
-   @foreach($restaurants as $restaurant)
+   {{-- @foreach($restaurants as $restaurant)
       <h3>{{ $restaurant->name }}</h3>
-   @endforeach
+   @endforeach --}}
+
+   <a href="{{route('guests.index')}}">
+      <button>Visualizza ristoranti</button>
+   </a>
 </div>
 @endsection

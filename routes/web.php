@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::resource('guests', 'GuestController');
+
 
 // Area riservata -- rotte
 Auth::routes();
