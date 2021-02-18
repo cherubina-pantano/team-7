@@ -5,6 +5,12 @@
 
         <h1>Menu</h1>
 
+        @if(session('dish-deleted'))
+            <div class = "alert alert-success mt-5">
+                 Il piatto '{{session('dish-deleted')}}' é stato cancellato con successo
+            </div>
+        @endif
+
         @if ($dishes->isEmpty())
             <p>Aggiungi nuovo piatto al menù</p>
         @else

@@ -3,10 +3,7 @@
 @section('content')
     <div class="container">
 
-
-
         <h1>Ristoranti</h1>
-
 
         @if ($restaurants->isEmpty())
             <p>Nono sono presenti ristoranti. Crea nuovo ristorante</p>
