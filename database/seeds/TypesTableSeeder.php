@@ -12,14 +12,17 @@ class TypesTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        for ($i = 0; $i < 10; $i++ ) {
-            $newType = new Type();
+        $types = [
+            'italiana', 'cinese', 'giapponese', 'vegetariana', 'vegana', 'pizzeria', 'fastfood', 'pesce', 'carne', 'pasticceria'];
 
-            $newType->type = $faker->word();
+        foreach($types as $type) {
+            $newTypes = new Type();
 
-            $newType->save();
+            $newTypes->type = $type;
+
+            $newTypes->save();
         }
     }
 }

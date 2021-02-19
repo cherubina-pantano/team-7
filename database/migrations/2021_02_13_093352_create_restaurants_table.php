@@ -19,7 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name', 50);
             $table->string('address', 100);
             $table->char('p_iva', 13)->unique();
-            $table->string('phone', 20)->unique();
+            $table->string('phone', 25)->unique();
             $table->timestamps();
 
             //Relazione

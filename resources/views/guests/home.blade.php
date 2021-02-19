@@ -9,7 +9,7 @@
    @endforeach --}}
 
    <a href="{{route('guests.index')}}">
-      <button>Visualizza ristoranti</button>
+      <button class='btn btn-dark'>Visualizza ristoranti</button>
    </a>
 </div>
 @endsection

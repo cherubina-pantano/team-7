@@ -19,11 +19,11 @@
 
         @foreach ($dishes as $dish)
 
-            <h3>{{$dish->name}}</h3>
+            <h3 class='mt-4'>{{$dish->name}}</h3>
                 <p>{{$dish->category}}</p>
                 <p>{{$dish->ingredients}}</p>
                 <p>{{$dish->description}}</p>
-                <p>{{$dish->price}}</p>
+                <p>{{$dish->price}} €</p>
                 {{-- <p>{{$dish->gluten}}</p>
                 <p>{{$dish->available}}</p> --}}
 
@@ -50,13 +50,13 @@
            <a href="{{route('admin.dishes.edit', $dish->id)}}" ><input type="submit" class='btn btn-primary' value='Edit'></a>
 
 
-            <form action="{{route('admin.dishes.destroy', $dish->id)}}" method='POST'>
+            <form class='d-inline' action="{{route('admin.dishes.destroy', $dish->id)}}" method='POST'>
              @csrf
              @method('DELETE')
 
                 <input type="submit" class='btn btn-danger' value='Delete'>
             </form>
-
+            <hr>
         @endforeach
 
     </div>
