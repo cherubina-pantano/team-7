@@ -66,7 +66,7 @@ class RestaurantController extends Controller
                 return redirect()->route('admin.home');
             }
             else {
-                return redirect()->route('admin.restaurants.create');
+                return redirect()-route('admin.restaurants.create');
             }
 
     }
@@ -79,7 +79,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**
@@ -92,9 +92,6 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::find($id);
         $types = Type::all();
-
-        
-
         return view('admin.restaurants.edit', compact('restaurant', 'types'));
     }
 
@@ -111,17 +108,16 @@ class RestaurantController extends Controller
             ['name'=>'required',
             'address'=>'required',
             'phone'=>['required',
-                Rule::unique('restaurants')->ignore($id), 
+                Rule::unique('restaurants')->ignore($id),
             'size:10'],
             // 'p_iva'=>['required',
-            //     Rule::unique('restaurants')->ignore($id), 
+            //     Rule::unique('restaurants')->ignore($id),
             // 'size:11']
             ]);
 
         $data = $request->all();
 
         $restaurant = Restaurant::find($id);
-
         $updated = $restaurant->update($data);
         if($updated) {
             if(!empty($data['types'])){

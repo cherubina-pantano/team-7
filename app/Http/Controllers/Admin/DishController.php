@@ -48,20 +48,20 @@ class DishController extends Controller
         $data['restaurant_id'] = Auth::id();
 
         $newDish = new Dish();
-        
+
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
-        
+
         $data['gluten'] = ($data['gluten'] == 'true') ? 1 : 0;
-        
+
         $newDish->fill($data);
 
         $request->validate([
-            'name' => 'required', 
-            'category' => 'required', 
-            'ingredients' => 'required', 
-            'description' => 'required', 
-            'price' => 'required', 
-            'gluten' => 'required', 
+            'name' => 'required',
+            'category' => 'required',
+            'ingredients' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'gluten' => 'required',
             'available' => 'required',
          ]);
 
@@ -82,7 +82,7 @@ class DishController extends Controller
      */
     public function show($id)
     {
-        
+
 
     }
 
@@ -120,7 +120,7 @@ class DishController extends Controller
         ]);
 
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
-        
+
         $data['gluten'] = ($data['gluten'] == 'true') ? 1 : 0;
 
         $dish = Dish::find($id);
@@ -144,7 +144,7 @@ class DishController extends Controller
         $name = $dish->name;
 
         $deleted = $dish->delete();
-        
+
         if($deleted) {
             return redirect()->route('admin.dishes.index')->with('dish-deleted', $name);
         } else {

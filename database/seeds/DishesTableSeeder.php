@@ -20,10 +20,11 @@ class DishesTableSeeder extends Seeder
         $restaurants = Restaurant::all();
 
         foreach ($restaurants as $restaurant) {
+            $newDish = new Dish();
 
-            
-                $newDish = new Dish();        
-                    
+            for ($i = 0; $i < 3; $i++) {
+                $newDish = new Dish();
+
                 $newDish->restaurant_id = $restaurant->id;
                 $newDish->name = $faker->word();
                 $newDish->category=$faker->word(2);
@@ -34,12 +35,9 @@ class DishesTableSeeder extends Seeder
                 $newDish->gluten = $faker->boolean();
                 $newDish->available = $faker->boolean();
                 $newDish->slug = Str::slug($newDish->name, '-');
-    
+
                 $newDish->save();
-
-            
-
-        };
-
+            };
+        }
     }
 }
