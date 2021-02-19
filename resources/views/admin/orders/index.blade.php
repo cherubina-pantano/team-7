@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <h1>Ordini</h1>
+        <h1>Ordini cliente</h1>
 
          <ul>
             @foreach ($orders as $order)
