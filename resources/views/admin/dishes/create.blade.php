@@ -67,7 +67,7 @@
                 <input class="form-check-input" type="radio" name="gluten" id="gluten2" value="false" checked>
                 <label class="form-check-label" for="gluten2">
                   No
-            </label>
+            </label> --}}
 
             <label>Disponibilità:</label>
             <div class="form-check">

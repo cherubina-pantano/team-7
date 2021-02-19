@@ -30,6 +30,8 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->
     Route::resource('restaurants', 'RestaurantController');
 
     Route::resource('dishes', 'DishController');
+
+    Route::resource('orders', 'OrderController');
 });
 
 

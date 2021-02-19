@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Restaurant;
 use App\Type;
 use App\Dish;
+use App\Order;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
