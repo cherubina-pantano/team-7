@@ -26,7 +26,7 @@ class ApiController extends Controller
 
         $search = DB::table('restaurants')
         ->join('restaurant_type', 'restaurants.id', '=', 'restaurant_type.restaurant_id')
-        ->select('restaurants.*')->get();
+        ->select('restaurants.*', 'restaurant_type.type_id')->get();
             return response()->json($search);
 
 
