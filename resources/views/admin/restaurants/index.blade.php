@@ -8,7 +8,7 @@
         @if ($restaurants->isEmpty())
             <p>Nono sono presenti ristoranti. Crea nuovo ristorante</p>
         @else
-            <p>Lista ristoranti</p>
+            <p>Lista ristoranti:</p>
         @endif
 
         @foreach ($restaurants as $restaurant)
