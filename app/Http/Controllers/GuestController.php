@@ -62,7 +62,7 @@ class GuestController extends Controller
 
         // dd($dishes);
         // dump($dishes);
-        return view('guests.show', compact('dishes', 'restaurants'));
+        return view('guests.show', compact('dishes'));
     }
 
     /**
