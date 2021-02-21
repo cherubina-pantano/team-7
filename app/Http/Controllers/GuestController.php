@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Restaurant;
 use App\Dish;
 use Illuminate\Support\Facades\Auth;
+use App\Type;
 
 class GuestController extends Controller
 {
@@ -17,8 +18,9 @@ class GuestController extends Controller
     public function index()
     {
         $restaurants = Restaurant::all();
+        $types = Type::all();
 
-        return view('guests.index', compact('restaurants'));
+        return view('guests.index', compact('restaurants', 'types'));
 
     }
 

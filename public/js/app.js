@@ -49602,17 +49602,45 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    types: []
+    types: [],
+    actualType: ''
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
+      // handle success
+      console.log(response.data);
+      _this.types = response.data;
+    })["catch"](function (error) {
+      // handle error
+      console.log(error);
+    });
+  },
+  methods: {
+    filterType: function filterType() {
+      var _this2 = this;
+
+      axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
+        var typeList = response.data;
+        console.log(response.data); // CONDIZIONE
+
+        if (_this2.actualType !== '') {
+          typeList = typeList.filter(function (typeElement) {
+            return typeElement.tipology === _this2.actualType;
+          });
+        } // ARRAY FILTRATO
+
+
+        _this2.types = typeList;
+        console.log(typeList);
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
+    }
   }
 }); // Make a request for a user with a given ID
-
-axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
-  // handle success
-  console.log(response);
-})["catch"](function (error) {
-  // handle error
-  console.log(error);
-});
 
 /***/ }),
 
