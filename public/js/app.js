@@ -49611,7 +49611,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
 
     axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
       // handle success
-      console.log(response.data);
+      // console.log(response.data);
       _this.types = response.data;
     })["catch"](function (error) {
       // handle error
@@ -49633,8 +49633,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         } // ARRAY FILTRATO
 
 
-        _this2.types = typeList;
-        console.log(typeList);
+        _this2.types = typeList; // console.log(typeList);
       })["catch"](function (error) {
         // handle error
         console.log(error);
@@ -49719,9 +49718,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

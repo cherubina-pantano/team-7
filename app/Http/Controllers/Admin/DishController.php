@@ -8,6 +8,7 @@ use App\Dish;
 use App\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class DishController extends Controller
 {
@@ -47,12 +48,17 @@ class DishController extends Controller
 
         $data['restaurant_id'] = Auth::id();
 
-        $newDish = new Dish();
 
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
 
         $data['gluten'] = ($data['gluten'] == 'true') ? 1 : 0;
 
+        // IMG
+        if(!empty($data['path_img'])){
+            $data['path_img'] = Storage::disk('public')->put('images', $data['path_img']);
+        }
+
+        $newDish = new Dish();
         $newDish->fill($data);
 
         $request->validate([
@@ -63,7 +69,9 @@ class DishController extends Controller
             'price' => 'required',
             'gluten' => 'required',
             'available' => 'required',
+            'path_img' => 'mimes:jpg,jpeg,png,bmp',
          ]);
+
 
         $saved = $newDish->save();
 
@@ -108,7 +116,7 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+
 
         $request->validate([
             'name' => 'required',
@@ -116,7 +124,8 @@ class DishController extends Controller
             'ingredients' => 'required',
             'category' => 'required',
             'price' => 'required',
-            'gluten' => 'required'
+            'gluten' => 'required',
+            'path_img' => 'mimes:jpg,jpeg,png,bmp',
         ]);
 
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;

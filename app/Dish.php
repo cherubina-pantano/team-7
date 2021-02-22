@@ -8,7 +8,8 @@ class Dish extends Model
 {
     // Mass Assignment
     protected $fillable = [
-        'name', 'restaurant_id', 'category', 'ingredients', 'description', 'price', 'gluten', 'available', 'slug'
+        'name', 'restaurant_id', 'category', 'ingredients',
+        'description', 'price', 'gluten', 'available', 'slug', 'path_img'
     ];
 
     public function restaurants() {

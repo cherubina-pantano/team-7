@@ -30,7 +30,7 @@ class DishesTableSeeder extends Seeder
                 $newDish->category=$faker->word(2);
                 $newDish->ingredients=$faker->word(10);
                 $newDish->description=$faker->paragraphs(2, true);
-                $newDish->path_img=$faker->imageUrl(640, 480);
+                $newDish->path_img=$faker->imageUrl(640, 480, null, false);
                 $newDish->price = $faker->randomFloat(2, 0, 999);
                 $newDish->gluten = $faker->boolean();
                 $newDish->available = $faker->boolean();

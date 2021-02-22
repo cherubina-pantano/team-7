@@ -14,7 +14,9 @@
             </div>
         @endif
 
-        <form action="{{route('admin.dishes.store')}}" method="POST">
+
+
+        <form action="{{route('admin.dishes.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('POST')
 
@@ -59,28 +61,25 @@
             <label>Glutine:</label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="gluten" id="gluten1" value="true" checked>
-                <label class="form-check-label" for="gluten1">
-                  Sì
-                </label>
+                <label class="form-check-label" for="gluten1">Sì</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="gluten" id="gluten2" value="false" checked>
-                <label class="form-check-label" for="gluten2">
-                  No
-            </label> --}}
-
+                <label class="form-check-label" for="gluten2">No</label>
+            </div>
             <label>Disponibilità:</label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="available" id="available1" value="true" checked>
-                <label class="form-check-label" for="available1">
-                  Sì
-                </label>
+                <label class="form-check-label" for="available1">Sì</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="available" id="available2" value="false" checked>
-                <label class="form-check-label" for="available2">
-                  No
-            </label>
+                <label class="form-check-label" for="available2">No</label>
+            </div>
+            <div class='form-group'>
+                <label for="path_img">Immagine</label>
+                <input class="form-control" type="file" name="path_img" id="path_img" accept="image/*">
+            </div>
 
 
             <input type="submit" class='btn btn-primary' value='Crea piatto'>

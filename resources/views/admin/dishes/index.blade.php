@@ -27,13 +27,13 @@
                 {{-- <p>{{$dish->gluten}}</p>
                 <p>{{$dish->available}}</p> --}}
 
-                {{-- <div>
+                <div>
                     @if (!empty($dish->path_img))
                         <img class="mb-3" width="250" src="{{asset('storage/' . $dish->path_img)}}" alt="{{$dish->name}}">
                     @else
                         <img class="mb-3" width="250" src="{{asset('')}}" alt="{{$dish->name}}">
                     @endif
-                </div> --}}
+                </div>
 
                 {{-- <section class="type">
                     <h6>TIPOLOGIA</h6>
