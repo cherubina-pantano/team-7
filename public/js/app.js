@@ -49594,16 +49594,17 @@ module.exports = function(module) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+/* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
   data: {
     types: [],
-    actualType: ''
+    actualType: 'tutte'
   },
   created: function created() {
     var _this = this;
@@ -49622,12 +49623,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       var _this2 = this;
 
       axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
-        var typeList = response.data;
-        console.log(response.data); // CONDIZIONE
+        var typeList = response.data; // console.log(response.data);
+        // CONDIZIONE
 
-        if (_this2.actualType !== '') {
+        if (_this2.actualType !== 'tutte') {
           typeList = typeList.filter(function (typeElement) {
-            return typeElement.tipology === _this2.actualType;
+            return typeElement.type === _this2.actualType;
           });
         } // ARRAY FILTRATO
 
@@ -49640,7 +49641,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       });
     }
   }
-}); // Make a request for a user with a given ID
+});
 
 /***/ }),
 
@@ -49718,9 +49719,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\ivana\Desktop\team-7-main\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

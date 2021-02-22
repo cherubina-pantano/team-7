@@ -1,38 +1,38 @@
-require('./bootstrap');
+import './bootstrap';
 
 import Vue from 'vue';
 
 const app = new Vue({
-    el:'#app',
+    el: '#app',
     data: {
         types:[],
-        actualType: ''
+        actualType: 'tutte'
     },
     created() {
         axios.get('http://127.0.0.1:8000/api/api')
             .then(response => {
             // handle success
-                console.log(response.data);
+                // console.log(response.data);
                 this.types = response.data;
             })
             .catch(error => {
             // handle error
             console.log(error);
             });
-        },
-    methods:{
+    },
+    methods: {
         filterType() {
             axios.get('http://127.0.0.1:8000/api/api')
             .then(response => {
             let typeList = response.data;
-            console.log(response.data);
+            // console.log(response.data);
             // CONDIZIONE
-            if(this.actualType !== '') {
-                typeList = typeList.filter(typeElement => typeElement.tipology === this.actualType);
+            if(this.actualType !== 'tutte') {
+                typeList = typeList.filter(typeElement => typeElement.type === this.actualType);
             }
             // ARRAY FILTRATO
             this.types = typeList;
-            console.log(typeList);
+            // console.log(typeList);
             })
             .catch(error => {
             // handle error
@@ -42,7 +42,6 @@ const app = new Vue({
     }
 });
 
-// Make a request for a user with a given ID
 
 
 
