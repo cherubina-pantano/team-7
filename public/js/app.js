@@ -49598,21 +49598,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _bootstrap__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_bootstrap__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   el: '#app',
   data: {
     types: [],
-    actualType: 'tutte'
+    name: '',
+    restaurants: [] // actualType: 'tutte'
+
   },
   created: function created() {
     var _this = this;
 
-    axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
+      params: {
+        name: this.name,
+        types: this.types
+      }
+    }).then(function (response) {
       // handle success
       // console.log(response.data);
-      _this.types = response.data;
+      _this.restaurants = response.data;
+      console.log(response.data);
     })["catch"](function (error) {
       // handle error
       console.log(error);
@@ -49622,23 +49633,30 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
     filterType: function filterType() {
       var _this2 = this;
 
-      axios.get('http://127.0.0.1:8000/api/api').then(function (response) {
-        var typeList = response.data; // console.log(response.data);
-        // CONDIZIONE
-
-        if (_this2.actualType !== 'tutte') {
-          typeList = typeList.filter(function (typeElement) {
-            return typeElement.type === _this2.actualType;
-          });
-        } // ARRAY FILTRATO
-
-
-        _this2.types = typeList; // console.log(typeList);
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
+        params: {
+          name: this.name,
+          types: this.types
+        }
+      }).then(function (response) {
+        // handle success
+        // console.log(response.data);
+        _this2.restaurants = response.data;
+        console.log(response.data);
       })["catch"](function (error) {
         // handle error
         console.log(error);
       });
-    }
+    } //     // ARRAY FILTRATO
+    //     this.types = typeList;
+    //     // console.log(typeList);
+    //     })
+    //     .catch(error => {
+    //     // handle error
+    //     console.log(error);
+    //     });
+    // }
+
   }
 });
 
@@ -49718,9 +49736,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

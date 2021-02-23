@@ -1,19 +1,28 @@
 import './bootstrap';
 
 import Vue from 'vue';
+import axios from 'axios';
 
 const app = new Vue({
     el: '#app',
     data: {
         types:[],
-        actualType: 'tutte'
+        name: '',
+        restaurants: [],
+        // actualType: 'tutte'
     },
     created() {
-        axios.get('http://127.0.0.1:8000/api/api')
+        axios.get('http://127.0.0.1:8000/api/filter', {
+            params: {
+                name: this.name,
+                types: this.types,
+            }
+        })
             .then(response => {
             // handle success
                 // console.log(response.data);
-                this.types = response.data;
+                this.restaurants = response.data;
+                console.log(response.data);
             })
             .catch(error => {
             // handle error
@@ -21,24 +30,33 @@ const app = new Vue({
             });
     },
     methods: {
-        filterType() {
-            axios.get('http://127.0.0.1:8000/api/api')
-            .then(response => {
-            let typeList = response.data;
-            // console.log(response.data);
-            // CONDIZIONE
-            if(this.actualType !== 'tutte') {
-                typeList = typeList.filter(typeElement => typeElement.type === this.actualType);
-            }
-            // ARRAY FILTRATO
-            this.types = typeList;
-            // console.log(typeList);
+         filterType() {
+            axios.get('http://127.0.0.1:8000/api/filter', {
+                params: {
+                    name: this.name,
+                    types: this.types,
+                }
             })
-            .catch(error => {
-            // handle error
-            console.log(error);
-            });
-        }
+                .then(response => {
+                // handle success
+                    // console.log(response.data);
+                    this.restaurants = response.data;
+                    console.log(response.data);
+                })
+                .catch(error => {
+                // handle error
+                console.log(error);
+                });
+             }
+        //     // ARRAY FILTRATO
+        //     this.types = typeList;
+        //     // console.log(typeList);
+        //     })
+        //     .catch(error => {
+        //     // handle error
+        //     console.log(error);
+        //     });
+        // }
     }
 });
 

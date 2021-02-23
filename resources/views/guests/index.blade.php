@@ -4,7 +4,32 @@
 
     <div class="container">
         Cerca per tipologia
-        <select v-model="actualType"
+
+        <input type="text" name="name" id="name" v-model="name">
+
+    
+        <div class='form-group'>
+               @foreach ($types as $type)
+                    <div class="form-check">
+                        <input v-on:keyup="filterType" class='form-check-input' type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}">
+                        <label for="type-{{$type->id}}">{{$type->type}}</label>
+                    </div>
+               @endforeach
+        </div>
+
+        <div>
+            <ul>
+                <li v-for="restaurant in restaurants">
+                    <a href="">@{{restaurant.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+      
+
+ 
+   
+        <!-- <select v-model="actualType"
         v-on:change="filterType"
         >
             <option value="tutte">tutte</option>
@@ -26,11 +51,11 @@
                 <p>@{{type.phone}}</p>
             </li>
         </ul>
-        <h2 v-else>Siamo spiacenti, non ci sono ancora ristoranti</h2>
+        <h2 v-else>Siamo spiacenti, non ci sono ancora ristoranti</h2> -->
     </div>
 
 
 @endsection
 
-<script src="{{asset('js/app.js')}}"></script>
+<script src="{{asset('js/app.js')}}" defer></script>
 
