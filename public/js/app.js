@@ -49612,26 +49612,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
 
   },
   created: function created() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
-      params: {
-        name: this.name,
-        types: this.types
-      }
-    }).then(function (response) {
-      // handle success
-      // console.log(response.data);
-      _this.restaurants = response.data;
-      console.log(response.data);
-    })["catch"](function (error) {
-      // handle error
-      console.log(error);
-    });
+    this.filterType();
   },
   methods: {
     filterType: function filterType() {
-      var _this2 = this;
+      var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
         params: {
@@ -49641,22 +49626,13 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       }).then(function (response) {
         // handle success
         // console.log(response.data);
-        _this2.restaurants = response.data;
+        _this.restaurants = response.data;
         console.log(response.data);
       })["catch"](function (error) {
         // handle error
         console.log(error);
       });
-    } //     // ARRAY FILTRATO
-    //     this.types = typeList;
-    //     // console.log(typeList);
-    //     })
-    //     .catch(error => {
-    //     // handle error
-    //     console.log(error);
-    //     });
-    // }
-
+    }
   }
 });
 
@@ -49736,9 +49712,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
+__webpack_require__(/*! C:\Users\cheru\Desktop\team-7\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\Users\cheru\Desktop\team-7\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\Users\cheru\Desktop\team-7\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

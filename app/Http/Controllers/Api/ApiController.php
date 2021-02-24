@@ -36,14 +36,13 @@ class ApiController extends Controller
         elseif(empty($data['name']) && !empty($data['types'])) {
     
 
-            foreach($data['types'] as $type) {
+            //Chiamata al DB in cui selezioniamo i ristoranti in base alla tipologia, usando condizione OR(whereIn)
                 $search = DB::table('restaurants')
                 ->join('restaurant_type', 'restaurants.id', '=', 'restaurant_type.restaurant_id')
                 ->join('types', 'types.id', '=','restaurant_type.type_id')
-                ->where('types.type', $type)->select('restaurants.id', 'restaurants.name')->get();
-
-        
-            }
+                ->whereIn('types.type', $data['types'])->select('restaurants.id', 'restaurants.name')
+                ->distinct()
+                ->get();              
         }
 
         // return 'dati da DB';
