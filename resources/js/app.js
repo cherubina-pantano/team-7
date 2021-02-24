@@ -12,22 +12,7 @@ const app = new Vue({
         // actualType: 'tutte'
     },
     created() {
-        axios.get('http://127.0.0.1:8000/api/filter', {
-            params: {
-                name: this.name,
-                types: this.types,
-            }
-        })
-            .then(response => {
-            // handle success
-                // console.log(response.data);
-                this.restaurants = response.data;
-                console.log(response.data);
-            })
-            .catch(error => {
-            // handle error
-            console.log(error);
-            });
+        this.filterType()
     },
     methods: {
          filterType() {

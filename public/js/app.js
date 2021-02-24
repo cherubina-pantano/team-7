@@ -49612,26 +49612,11 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
 
   },
   created: function created() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
-      params: {
-        name: this.name,
-        types: this.types
-      }
-    }).then(function (response) {
-      // handle success
-      // console.log(response.data);
-      _this.restaurants = response.data;
-      console.log(response.data);
-    })["catch"](function (error) {
-      // handle error
-      console.log(error);
-    });
+    this.filterType();
   },
   methods: {
     filterType: function filterType() {
-      var _this2 = this;
+      var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/filter', {
         params: {
@@ -49641,7 +49626,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
       }).then(function (response) {
         // handle success
         // console.log(response.data);
-        _this2.restaurants = response.data;
+        _this.restaurants = response.data;
         console.log(response.data);
       })["catch"](function (error) {
         // handle error
