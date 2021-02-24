@@ -60,14 +60,15 @@ class GuestController extends Controller
         //$dishes = Dish::all();
         // $restaurants = Restaurant::where('id', Auth::id())->get();
 
+        $restaurant = Restaurant::find($id);
+        
+        $dishes = Dish::where('restaurant_id', $id)->get();
 
-        // $dishes = Dish::where('restaurant_id', Auth::id())->get();
-
-        $dishes = Dish::find($id)->get();
+        //$dishes = Dish::find($id)->get();
 
         // dd($dishes);
         // dump($dishes);
-        return view('guests.show', compact('dishes'));
+        return view('guests.show', compact('dishes', 'restaurant'));
     }
 
     /**

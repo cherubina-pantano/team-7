@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
-use App\Type;
+use App\Dish;
 use Illuminate\Support\Facades\DB;
 
 
@@ -58,13 +58,14 @@ class ApiController extends Controller
     }
 
     public function dishes_filter(Request $request) {
-        //$data = $request->all();
+        $data = $request->all();
         
-        $dishes_search = DB::table('dishes')               
-        ->select('dishes.name', 'dishes.restaurant_id')
+        $dishes_search = Dish::where('dishes.restaurant_id', $data['id']) 
         ->get();
+
+        // ->select('dishes.name', 'dishes.restaurant_id')
         
-        //dd($dishes_search);
+        dd($data);
 
         return response()->json($dishes_search); 
 

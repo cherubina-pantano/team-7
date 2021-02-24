@@ -25,7 +25,10 @@
         <div v-if="restaurants.length > 0">
             <ul>
                 <li v-for="restaurant in restaurants">
-                    <a href="{{route('guests.index')}}">@{{restaurant.name}}</a>
+                    <a :href="route(restaurant.id)">@{{restaurant.name}}</a>
+                </li>
+                <li>
+
                 </li>
             </ul>
         </div>
