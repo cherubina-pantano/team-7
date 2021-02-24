@@ -11,8 +11,13 @@
         <div class='form-group'>
                @foreach ($types as $type)
                     <div class="form-check">
-                        <input v-on:keyup="filterType" class='form-check-input' type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}">
-                        <label for="type-{{$type->id}}">{{$type->type}}</label>
+                        <input class='form-check-input' 
+                        type="checkbox" id="{{$type->type}}" 
+                        value="{{$type->type}}" 
+                        v-on:change="filterType"
+                        v-model="types"
+                        >
+                        <label for="{{$type->type}}">{{$type->type}}</label>
                     </div>
                @endforeach
         </div>
