@@ -22,13 +22,15 @@
                @endforeach
         </div>
 
-        <div>
+        <div v-if="restaurants.length > 0">
             <ul>
                 <li v-for="restaurant in restaurants">
-                    <a href="">@{{restaurant.name}}</a>
+                    <a href="{{route('guests.index')}}">@{{restaurant.name}}</a>
                 </li>
             </ul>
         </div>
+        
+        <h2 v-else>Non ci sono ristoranti che propongano questa cucina</h2>
 
     </div>
 

@@ -49608,7 +49608,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
   data: {
     types: [],
     name: '',
-    restaurants: [] // actualType: 'tutte'
+    restaurants: [],
+    dishes: [] //nameDish: '',
+    // actualType: 'tutte'
 
   },
   created: function created() {
@@ -49632,8 +49634,27 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1___default.a({
         // handle error
         console.log(error);
       });
+    },
+    filterDishes: function filterDishes() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('http://127.0.0.1:8000/api/dishes_filter', {
+        params: {
+          //nameDish: this.nameDish,
+          dishes: this.dishes
+        }
+      }).then(function (response) {
+        // handle success
+        // console.log(response.data);
+        _this2.dishes = response.data;
+        console.log(response.data);
+      })["catch"](function (error) {
+        // handle error
+        console.log(error);
+      });
     }
-  }
+  } // -->fine methods
+
 });
 
 /***/ }),
