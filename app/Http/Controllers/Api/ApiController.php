@@ -65,7 +65,7 @@ class ApiController extends Controller
 
         // ->select('dishes.name', 'dishes.restaurant_id')
         
-        dd($data);
+        //dd($data);
 
         return response()->json($dishes_search); 
 

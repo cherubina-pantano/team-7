@@ -14451,7 +14451,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   data: {
     dishes: []
   },
-  created: function created() {// axios.get('http://127.0.0.1:8000/api/dishes_filter', {
+  created: function created() {
+    // axios.get('http://127.0.0.1:8000/api/dishes_filter', {
     //         params: {
     //             //nameDish: this.nameDish,
     //             dishes: this.dishes,
@@ -14467,6 +14468,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     //         // handle error
     //         console.log(error);
     //         });
+    //},
+    methods: {} // --> fine methods
+
   }
 });
 

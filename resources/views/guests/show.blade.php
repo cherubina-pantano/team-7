@@ -3,7 +3,7 @@
 @section('content')
 <div id="dish">
      <div class="container">
-          <h1>Menu del ristorante {{$restaurant->name}}</h1>
+          <h1>Menu del ristorante</h1>
 
           
        

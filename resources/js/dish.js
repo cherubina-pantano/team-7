@@ -5,8 +5,9 @@ const app = new Vue({
     el: '#dish',
     data: {
         dishes: [],
+        
     },
-    created() {
+    created() {        
         // axios.get('http://127.0.0.1:8000/api/dishes_filter', {
         //         params: {
         //             //nameDish: this.nameDish,
@@ -23,6 +24,11 @@ const app = new Vue({
         //         // handle error
         //         console.log(error);
         //         });
+        //},
+    methods: {
+        
+        } // --> fine methods
+
     }
 
 });
