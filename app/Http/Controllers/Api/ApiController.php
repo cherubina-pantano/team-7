@@ -32,7 +32,7 @@ class ApiController extends Controller
                     ->get();
         }
         //Ricerca del ristorante solo per tipologiaa
-        elseif(empty($data['name']) && !empty($data['types'])) {   
+        elseif(empty($data['name']) && !empty($data['types'])) {
 
          //Chiamata al DB in cui selezioniamo i ristoranti in base alla tipologia, usando condizione "OR"(whereIn)
          $search = DB::table('restaurants')
@@ -54,25 +54,25 @@ class ApiController extends Controller
                  ->get();
         }
 
-         return response()->json($search); 
+         return response()->json($search);
     }
 
     public function dishes_filter(Request $request) {
         $data = $request->all();
-        
-        $dishes_search = Dish::where('dishes.restaurant_id', $data['id']) 
+
+        $dishes_search = Dish::where('dishes.restaurant_id', $data['id'])
         ->get();
 
         // ->select('dishes.name', 'dishes.restaurant_id')
-        
+
         //dd($data);
 
-        return response()->json($dishes_search); 
+        return response()->json($dishes_search);
 
         // SELECT `dishes`.`name`, `dishes`.`restaurant_id`, `restaurants`.`id`, `restaurants`.`name`
         // FROM `dishes`
         // INNER JOIN `restaurants`
         // ON `dishes`.`restaurant_id` = `restaurants`.`id`
-        
+
     }
 }
