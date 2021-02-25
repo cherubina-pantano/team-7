@@ -7,13 +7,13 @@
 
         <input type="text" name="name" id="name" v-model="name" v-on:keyup="filterType">
 
-    
+
         <div class='form-group'>
                @foreach ($types as $type)
                     <div class="form-check">
-                        <input class='form-check-input' 
-                        type="checkbox" id="{{$type->type}}" 
-                        value="{{$type->type}}" 
+                        <input class='form-check-input'
+                        type="checkbox" id="{{$type->type}}"
+                        value="{{$type->type}}"
                         v-on:change="filterType"
                         v-model="types"
                         >
