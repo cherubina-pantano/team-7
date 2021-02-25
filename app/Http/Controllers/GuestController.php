@@ -60,7 +60,7 @@ class GuestController extends Controller
         //$dishes = Dish::all();
         // $restaurants = Restaurant::where('id', Auth::id())->get();
 
-       // $restaurant = Restaurant::find($id);
+       $restaurant = Restaurant::find($id);
         
         //$dishes = Dish::where('restaurant_id', $id)->get();
         //$restaurant_id = $id;
@@ -69,7 +69,7 @@ class GuestController extends Controller
 
         // dd($dishes);
         // dump($dishes);
-        return view('guests.show', compact('dishes'));
+        return view('guests.show', compact('dishes', 'restaurant'));
     }
 
     /**
