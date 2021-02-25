@@ -57,15 +57,18 @@ class ApiController extends Controller
          return response()->json($search);
     }
 
-    public function dishes_filter(Request $request) {
+    public function dishesFilter(Request $request) {
         $data = $request->all();
-
-        $dishes_search = Dish::where('dishes.restaurant_id', $data['id'])
+        
+        $dishes_search = DB::table('dishes')
+        ->where('restaurant_id', '=', $data['id'])
+        ->select('dishes.name', 'dishes.restaurant_id', 'dishes.description', 'dishes.ingredients', 'dishes.price', 'dishes.available')
         ->get();
+       
+        //dd($dishes_search);        
 
-        // ->select('dishes.name', 'dishes.restaurant_id')
-
-        //dd($data);
+        
+        //dd($dishes_search);
 
         return response()->json($dishes_search);
 

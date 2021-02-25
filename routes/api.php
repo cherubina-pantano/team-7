@@ -24,6 +24,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Api')->group(function() {
     Route::get('/filter', 'ApiController@filter');
-    Route::get('/dishes_filter', 'ApiController@dishes_filter');
+    Route::get('/dishesFilter', 'ApiController@dishesFilter');
 
 });

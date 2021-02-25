@@ -14446,32 +14446,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 
 
-var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#dish',
   data: {
-    dishes: []
+    dishes: [],
+    id: ''
   },
   created: function created() {
-    // axios.get('http://127.0.0.1:8000/api/dishes_filter', {
-    //         params: {
-    //             //nameDish: this.nameDish,
-    //             dishes: this.dishes,
-    //         }
-    //         })
-    //         .then(response => {
-    //         // handle success
-    //             // console.log(response.data);
-    //             this.dishes = response.data;
-    //             console.log(response.data);
-    //         })
-    //         .catch(error => {
-    //         // handle error
-    //         console.log(error);
-    //         });
-    //},
-    methods: {} // --> fine methods
+    var _this = this;
 
-  }
+    this.id = document.getElementById('restaurantId').value; // console.log(this.id);
+
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://127.0.0.1:8000/api/dishesFilter', {
+      params: {
+        id: this.id
+      }
+    }).then(function (response) {
+      // handle success
+      // console.log(response.data);
+      _this.dishes = response.data;
+      console.log(response.data);
+    })["catch"](function (error) {
+      // handle error
+      console.log(error);
+    });
+  },
+  methods: {} // --> fine methods
+
 });
 
 /***/ }),

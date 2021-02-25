@@ -10,8 +10,8 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{asset('js/app.js')}}"defer></script>
-    <script src="{{asset('js/hamburger.js')}}"defer></script>
+    <script src="{{ asset('js/app.js') }}"defer></script>
+    <script src="{{asset('js/dish.js')}}"defer></script>
 
         <!-- GOOGLE FONT  -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,7 +23,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -90,10 +90,10 @@
             </div>
         </nav>
 
+        <main class="py-4">
+            @yield('content')
 
-        @yield('content')
-
-    </div>
-
-    </body>
+        </main>
+  
+</body>
 </html>

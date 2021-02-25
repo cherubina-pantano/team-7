@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div id="app">
     <div class="container">
         Cerca per tipologia
 
-        <input type="text" name="name" id="name" v-model="name" v-on:keyup="filterType">
+        <input type="text" name="name" id="name" 
+        v-model="name" v-on:keyup="filterType">
 
 
         <div class='form-group'>
@@ -27,15 +28,15 @@
                 <li v-for="restaurant in restaurants">
                     <a :href="route(restaurant.id)">@{{restaurant.name}}</a>
                 </li>
-                <li>
-
-                </li>
+                
             </ul>
         </div>
         
         <h2 v-else>Non ci sono ristoranti che propongano questa cucina</h2>
 
     </div>
+</div>
+   
 
 
 @endsection
