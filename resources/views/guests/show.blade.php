@@ -3,40 +3,29 @@
 @section('content')
 <div id="dish">
      <div class="container">
-          <h1>Menu del ristorante {{$restaurant->name}}</h1>         
+          <h1>Menu del ristorante {{$restaurant->name}}</h1>
 
-           <input type="hidden" value="{{$restaurant->id}}" 
+           <input type="hidden" value="{{$restaurant->id}}"
            id="restaurantId">
-          
+
 
           <div>
                <ul>
                     <li v-for="dish in dishes">
-                         <p>
-                              @{{dish.name}}
-                         </p>
-                         <br>                         
-                         <p>
-                              @{{dish.description}}
-                         </p>
-                         <p>
-                              @{{dish.ingredients}}
-                         </p>
-                         <p>
-                              @{{dish.price}}
-                         </p>
-                         <p>
-                              @{{dish.available}}
-                         </p>                     
-                 
+                         <h4>@{{dish.name}}</h4>
+                         <p>Descrizione: @{{dish.description}}</p>
+                         <p>Ingredienti: @{{dish.ingredients}}</p>
+                         <img src="../images/vegan.jpg" width="300" alt="">
+                         <p>Prezzo: @{{dish.price}}€</p>
+                         <hr>
                     </li>
                </ul>
           </div>
-       
-         
-          
-       
-       
+
+
+
+
+
        </div>
 
     </div>

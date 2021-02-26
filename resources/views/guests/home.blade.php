@@ -8,6 +8,7 @@
 </div> --}}
 
    <!-- Hamburger ------->
+
         <div id ="menu" class="menu">
             <div id="menu-bar" onclick="onClickMenu()">
                 <i class="fas fa-hamburger fa-5x bar"></i>
@@ -130,7 +131,7 @@
 
      <!-- NUMBER SECTION  -->
         <div>
-            <h1 class="title-text">I nostri gentili collaboratori si occuperanno della consegna</h1>
+            <h1 class="title-text">Dicono di noi...</h1>
         </div>
 
     <section id="numbers">

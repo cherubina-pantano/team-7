@@ -16,16 +16,20 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        
+
         $users = User::all();
+
+
 
         foreach ($users as $user) {
             //crea nuova istanza
+
+
             $newRestaurant = new Restaurant();
 
             //set dati colonne
             $newRestaurant->user_id = $user->id;
-            $newRestaurant->name = $faker->name();
+            $newRestaurant->name = $faker->randomElement(['Raggio Verde','La Capannina','La Cantinetta','Osteria del Capitano','Pechino','Nagoya','La Vaca Loca','Fratelli La Bufala','Pizza Bike', 'American Graffiti', 'American Dinner']);
             $newRestaurant->address = $faker->address();
             $newRestaurant->p_iva = $faker->unique()->regexify('[0-9]{11}');
             $newRestaurant->phone = $faker->unique()->phoneNumber();

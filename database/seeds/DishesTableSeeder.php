@@ -26,12 +26,12 @@ class DishesTableSeeder extends Seeder
                 $newDish = new Dish();
 
                 $newDish->restaurant_id = $restaurant->id;
-                $newDish->name = $faker->word();
-                $newDish->category=$faker->word(2);
+                $newDish->name = $faker->randomElement(['Hamburger','Pesce Spada','Lasagna al Forno','Verdure Grigliate','Pasta all\'Amatriciana','Cotoletta alla Milanese','Hamburger di verdure','Involtini Primavera','Branzino all\'Isolana','Polpette al sugo']);
+                $newDish->category=$faker->randomElement(['Antipasto', 'Primo','Secondo', 'Contorno']);
                 $newDish->ingredients=$faker->word(10);
                 $newDish->description=$faker->paragraphs(2, true);
-                $newDish->path_img=$faker->imageUrl('public/storage/images', 640, 480,'food', null, false);
-                $newDish->price = $faker->randomFloat(2, 0, 999);
+                $newDish->path_img=$faker->imageUrl(640, 480);
+                $newDish->price = $faker->randomFloat(2, 0, 50);
                 $newDish->gluten = $faker->boolean();
                 $newDish->available = $faker->boolean();
                 $newDish->slug = Str::slug($newDish->name, '-');

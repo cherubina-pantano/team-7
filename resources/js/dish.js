@@ -6,9 +6,9 @@ const dish = new Vue({
     data: {
         dishes: [],
         id: '',
-        
+
     },
-    created() {        
+    created() {
         this.id = document.getElementById('restaurantId').value;
         // console.log(this.id);
         axios.get('http://127.0.0.1:8000/api/dishesFilter', {
@@ -20,7 +20,7 @@ const dish = new Vue({
                 // handle success
                     // console.log(response.data);
                     this.dishes = response.data;
-                    
+
                     console.log(response.data);
                 })
                 .catch(error => {
@@ -29,9 +29,9 @@ const dish = new Vue({
                 });
         },
     methods: {
-        
+
     } // --> fine methods
 
-    
+
 
 });

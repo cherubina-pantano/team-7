@@ -34,13 +34,13 @@ const app = new Vue({
                 // handle error
                 console.log(error);
                 });
-            
+
         },
             route(id){
                 return window.location + '/' + id ;
             }
     } // -->fine methods
-    
+
 });
 
 
