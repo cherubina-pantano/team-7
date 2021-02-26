@@ -24,8 +24,7 @@
     {{-- header-hero  --}}
         <header class="header">
             <div class="hero">
-                <img src="images/logoFra.png" alt="logo">
-                <h1 class="title">Fast&Food</h1>
+                <img src="images/logo-2.png" alt="logo">
                 <a href="{{route('guests.index')}}" class="hero-button pulsate">Visualizza Ristoranti</a>
             </div>
         </header>
@@ -280,11 +279,11 @@
         </div>
             <section id="gallery-center">
              <article class="gallery-item">
-                    <img src="images/misto7.jpg" alt="">
+                    <img src="images/misto.jpg" alt="">
             </article>
 
             <article class="gallery-item">
-                <a href="images/misto2.jpg">
+                <a href="images/misto.jpg">
                     <img src="images/misto2.jpg" alt="">
                 </a>
             </article>
@@ -296,37 +295,89 @@
             </article>
 
             <article class="gallery-item">
-                <a href="images/misto7.jpg">
+                <a href="images/verdure.jpg">
                     <img src="images/misto7.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
                 <a href="images/misto5.jpg">
-                    <img src="images/misto5.jpg" alt="">
-                </a>
-            </article>
-
-            <article class="gallery-item">
-                <a href="images/misto6.jpg">
                     <img src="images/misto6.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
-                <a href="images/misto7.jpg">
+                <a href="images/misto6.jpg">
                     <img src="images/misto7.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
                 <a href="images/misto7.jpg">
-                    <img src="images/misto7.jpg" alt="">
+                    <img src="images/pizza.jpg" alt="">
+                </a>
+            </article>
+
+            <article class="gallery-item">
+                <a href="images/misto7.jpg">
+                    <img src="images/vegan.jpg" alt="">
                 </a>
             </article>
 
         </section>
     </section>
+
+    <!-- FOOTER  -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="footer-col">
+                        <h4>La Nostra Azienda</h4>
+                            <ul>
+                                <li> <a href=""> About Us </a> </li>
+                                <li> <a href=""> I Nostri Servizi</a> </li>
+                                <li> <a href="">Aziende Partner</a> </li>
+                                <li> <a href="">Novità</a> </li>
+                            </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Info&Promozioni</h4>
+                            <ul>
+                                <li> <a href="">FAQ</a> </li>
+                                <li> <a href="">Resi</a> </li>
+                                <li> <a href="">Stato degli Ordini</a> </li>
+                                <li> <a href="">Opzioni di Pagamento</a> </li>
+                            </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Shop Online</h4>
+                            <ul>
+                                <li> <a href="">Promozioni</a> </li>
+                                <li> <a href="">Ordini Per Ricevimenti</a> </li>
+                                <li> <a href="">Gadget</a> </li>
+                            </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Seguiteci</h4>
+                            <div class="social-footer">
+                                <a href="#"> <i class="fab fa-facebook facebook"></i>
+                                <a href="#"> <i class="fab fa-twitter twitter"></i>
+                                <a href="#"> <i class="fab fa-instagram instagram"></i>
+                                <a href="#"> <i class="fab fa-google-plus plus"></i>
+                            </div>
+
+                            <div class="footer-logo">
+                                <img src="../images/logo-2.png" alt="">
+                            </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+
 
 
 @endsection
