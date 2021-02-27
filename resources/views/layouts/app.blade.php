@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"defer></script>
     <script src="{{asset('js/dish.js')}}"defer></script>
+    <script src="{{asset('js/hamburger.js')}}"defer></script>
 
         <!-- GOOGLE FONT  -->
         <link rel="preconnect" href="https://fonts.gstatic.com">

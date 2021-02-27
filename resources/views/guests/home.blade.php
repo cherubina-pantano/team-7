@@ -21,9 +21,19 @@
             </div>
         </div>
 
+        {{-- carrello  --}}
+
+
 
     {{-- header-hero  --}}
         <header class="header">
+            <div class="container  text-right">
+                 <button class="btn btn-primary" data-toggle="modal" data-target="#cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge badge-light"></span>
+                </button>
+            </div>
+
             <div class="hero">
                 <img src="images/logo-2.png" alt="logo">
                 <a href="{{route('guests.index')}}" class="hero-button pulsate">Visualizza Ristoranti</a>
@@ -134,28 +144,58 @@
             <h1 class="title-text">Dicono di noi...</h1>
         </div>
 
-    <section id="numbers">
-        <article class= "number">
-            <img src="images/ivan.jpg" alt="">
-            <p>Ivan</p>
-            <p>"cortesi e efficienti..."</p>
-        </article>
-          <article class= "number">
-            <img src="images/giuli.jpg" alt="">
-            <p>Giulia</p>
-            <p>"una sicurezza, chiamo sempre loro..."</p>
-        </article>
-          <article class= "number">
-            <img src="images/cheru.jpg" alt="">
-            <p>Cherubina</p>
-            <p>"rapidi e gentili..."</p>
-        </article>
-          <article class= "number">
-            <img src="images/Fra.jpg" alt="">
-            <p>Francesco</p>
-            <p>"...draghi!!!"</p>
-        </article>
-    </section>
+    <div class="container-cards" id="cards-team7">
+
+        <div class="container2">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="images/ivan.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Ivan</h2>
+                    <p> Con Fast&Food posso finalmente ordinare i piatti della cucina sud-americana </p>
+                </div>
+            </div>
+        </div>
+
+         <div class="container2">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="images/giuli.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Giulia</h2>
+                    <p> Quando ho voglia di Pizza, Fast&Food e in un attimo è a casa mia!! </p>
+                </div>
+            </div>
+        </div>
+
+         <div class="container2">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="images/cheru.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Cherubina</h2>
+                    <p>Cortesia, puntualità, una garanzia!!! </p>
+                </div>
+            </div>
+        </div>
+
+         <div class="container2">
+            <div class="card">
+                <div class="imgBx">
+                    <img src="images/fra.jpg" alt="">
+                </div>
+                <div class="content">
+                    <h2>Francesco</h2>
+                    <p> Un appuntamento settimanale che ormai si ripete da non so quanto tempo! </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
     <!-- CARDS SECTIONS -->
 
