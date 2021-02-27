@@ -1,40 +1,48 @@
 @extends('layouts.app')
 
 @section('content')
-<div id="app">
-    <div class="container">
-        Cerca per tipologia
+<div id="app" >
+    <div class='index'>
+        <div class="container pt-4 text-center">
+             <h3>Ricerca Ristorante</h3>
 
-        <input type="text" name="name" id="name" 
-        v-model="name" v-on:keyup="filterType">
+             <input class='rounded-pill border-0 p-1 mb-2' type="text" name="name" id="name" 
+             v-model="name" v-on:keyup="filterType">
 
+             <h3 class='pt-4'>Ricerca tipologia ristorante</h3>
 
-        <div class='form-group'>
-               @foreach ($types as $type)
-                    <div class="form-check">
-                        <input class='form-check-input'
-                        type="checkbox" id="{{$type->type}}"
-                        value="{{$type->type}}"
-                        v-on:change="filterType"
-                        v-model="types"
-                        >
-                        <label for="{{$type->type}}">{{$type->type}}</label>
-                    </div>
-               @endforeach
+                <div class='d-flex justify-content-center mt-3'>
+                      @foreach ($types as $type)
+                         <div class="form-check mr-2 mb-2">
+                                <input class='form-check-input'
+                             type="checkbox" id="{{$type->type}}"
+                             value="{{$type->type}}"
+                             v-on:change="filterType"
+                             v-model="types"
+                            >
+                            <label for="{{$type->type}}">{{$type->type}}</label>
+                            </div>
+                      @endforeach
+                </div>
         </div>
+    </div>
 
-        <div v-if="restaurants.length > 0">
-            <ul>
-                <li v-for="restaurant in restaurants">
-                    <a :href="route(restaurant.id)">@{{restaurant.name}}</a>
+    <div class='card-restaurant mt-6'>
+        <div class=" container pb-4" v-if="restaurants.length > 0">
+            <ul class="d-flex flex-wrap justify-content-center">
+                <li class="food-card-restaurant" v-for="restaurant in restaurants">
+                    <a class='font-4' :href="route(restaurant.id)">@{{restaurant.name}}</a>
+                    <p>Indirizzo: @{{restaurant.address}} <br> Telefono: @{{restaurant.phone}} </p>
                 </li>
                 
             </ul>
         </div>
         
-        <h2 v-else>Non ci sono ristoranti che propongano questa cucina</h2>
-
+        <h2 class="pb-4 no-restaurant" v-else>Non ci sono ristoranti che propongano questa cucina</h2>
     </div>
+       
+
+    
 </div>
    
 
