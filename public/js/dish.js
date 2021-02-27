@@ -14450,6 +14450,7 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#dish',
   data: {
     dishes: [],
+    carrello: [],
     id: ''
   },
   created: function created() {
@@ -14471,7 +14472,55 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       console.log(error);
     });
   },
-  methods: {} // --> fine methods
+  computed: {
+    carrelloTotale: function carrelloTotale() {
+      var somma = 0;
+
+      for (var key in this.carrello) {
+        somma = somma + this.carrello[key].dish.price * this.carrello[key].quantita;
+      }
+
+      return somma;
+    },
+    quantitaTotale: function quantitaTotale() {
+      var quantita = 0;
+
+      for (var key in this.carrello) {
+        quantita = quantita + this.carrello[key].quantita;
+      }
+
+      return quantita;
+    }
+  },
+  methods: {
+    aggiungereCarrello: function aggiungereCarrello(dish) {
+      var elementoEsistente;
+      var esistente = this.carrello.filter(function (item, index) {
+        if (item.dish.id == Number(dish.id)) {
+          elementoEsistente = index;
+          return true;
+        } else {
+          return false;
+        }
+      });
+
+      if (esistente.length) {
+        this.carrello[elementoEsistente].quantita++;
+      } else {
+        this.carrello.push({
+          dish: dish,
+          quantita: 1
+        });
+      }
+    },
+    rimuovereCarrello: function rimuovereCarrello(dish) {
+      if (this.carrello[dish].quantita > 1) {
+        this.carrello[dish].quantita--;
+      } else {
+        this.carrello.splice(dish, 1);
+      }
+    }
+  } // --> fine methods
 
 });
 
