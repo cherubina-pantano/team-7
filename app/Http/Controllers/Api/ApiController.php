@@ -22,13 +22,13 @@ class ApiController extends Controller
         if(empty($data['name']) && empty($data['types'])) {
             //Otteniamo tutti i ristoranti perchè i campi delle ricerche sono vuoti
             $search = DB::table('restaurants')
-                    ->select('restaurants.id', 'restaurants.name')
+                    ->select('restaurants.id', 'restaurants.name', 'restaurants.address', 'restaurants.phone')
                     ->get();
         }
         elseif(!empty($data['name']) && empty($data['types'])) {
              //Ricerca del ristorante attraverso il nome
              $search = Restaurant::where('name', 'like', "%$name%")
-                    ->select('restaurants.id', 'restaurants.name')
+                    ->select('restaurants.id', 'restaurants.name','restaurants.address', 'restaurants.phone')
                     ->get();
         }
         //Ricerca del ristorante solo per tipologiaa
