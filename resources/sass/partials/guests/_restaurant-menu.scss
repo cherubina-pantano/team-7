@@ -1,14 +1,13 @@
 h1 {
-   background: #212529;
-   color: orange;
-   text-align: center;
-   text-transform: uppercase;
-
+    background: #212529;
+    color: orange;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .menu-list {
-    box-shadow: 2px 3px 1px 1px #cd6100;
-    background:#fce88b ;
+    box-shadow: 2px 3px 1px 1px #CD6100;
+    background: #fce88b;
     border-radius: 5px;
 
     .logo-menu {
@@ -19,12 +18,11 @@ h1 {
         width: 900px;
         margin: 10px auto;
         border-bottom: 1px solid black;
-        
+
         h2 {
             background: #fff;
             border: 10px solid orange;
             border-style: double;
-
         }
 
         p {
@@ -43,16 +41,15 @@ h1 {
             }
         }
 
-      &:last-child {
-          border-bottom: none;
-      }
+        &:last-child {
+            border-bottom: none;
+        }
 
-      .list-item {
-          background: #fff;
-          padding: 15px;
-          border-radius: 5px;
-          box-shadow: 2px 3px 1px 1px orange;
-      }
-
+        .list-item {
+            background: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 2px 3px 1px 1px orange;
+        }
     }
 }
