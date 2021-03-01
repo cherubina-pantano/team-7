@@ -33,7 +33,8 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->
 
     Route::resource('orders', 'OrderController');
 });
-
+Route::get('/checkout/stripe', 'CheckoutController@stripe')->name('stripe');
+Route::get('/checkout/stripepayment', 'CheckoutController@stripePayment')->name('stripepayment');
 
 
 //Route::get('/home', 'HomeController@index')->name('home');

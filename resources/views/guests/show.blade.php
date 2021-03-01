@@ -30,7 +30,7 @@
                                     <tbody>
                                         <tr v-for="(dishCarrello, index) in carrello">
                                             <td width="100">
-                                                <input type="number" min="0" max="10" class="form-control" v-model="dishCarrello.quantita">
+                                                <input type="number" min="0" max="20" class="form-control" v-model.number="dishCarrello.quantita">
                                             </td>
                                             <td>@{{dishCarrello.dish.name}}</td>
                                             <td>@{{dishCarrello.quantita * dishCarrello.dish.price}} €</td>
@@ -59,7 +59,7 @@
                    <div class='d-flex justify-content-center'>
                         <img class='logo-menu pb-3' src="../images/menu.png" alt="">
                    </div>
-                    <li class='dish-list' v-for="dish in dishes">
+                    <li class='dish-list' v-for="dish in dishes" v-show="dish.available == 1">
                          <h2 class='pt-3 pb-3 pl-3'>@{{dish.name}}</h2>
                         <div class='list-item mt-3 mb-3'>
                             <p> <strong>Descrizione:</strong>  @{{dish.description}}</p>
