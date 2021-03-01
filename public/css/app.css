@@ -10543,6 +10543,8 @@ body {
 
 .card-restaurant {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../images/misto5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .food-card-restaurant {
@@ -10563,6 +10565,54 @@ body {
   text-align: center;
   color: #fff;
   padding: 40px;
+}
+
+h1 {
+  background: #212529;
+  color: orange;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu-list {
+  box-shadow: 2px 3px 1px 1px #cd6100;
+  background: #fce88b;
+  border-radius: 5px;
+}
+.menu-list .logo-menu {
+  width: 200px;
+}
+.menu-list .dish-list {
+  width: 900px;
+  margin: 10px auto;
+  border-bottom: 1px solid black;
+}
+.menu-list .dish-list h2 {
+  background: #fff;
+  border: 10px solid orange;
+  border-style: double;
+}
+.menu-list .dish-list p {
+  font-size: 18px;
+}
+.menu-list .dish-list .btn-aggiungi {
+  background: #212529;
+  color: orange;
+  font-size: 15px;
+  font-weight: bold;
+}
+.menu-list .dish-list .btn-aggiungi:hover {
+  background: orange;
+  color: #212529;
+}
+.menu-list .dish-list:last-child {
+  border-bottom: none;
+}
+.menu-list .dish-list .list-item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 1px 1px orange;
 }
 
 /* FOOTER  */

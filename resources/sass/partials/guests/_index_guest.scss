@@ -1,5 +1,6 @@
 .index {
     background-color: orange;
+
 }
 
 .font-4 {
@@ -9,7 +10,8 @@
 
 .card-restaurant {
     background:  linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../images/misto5.jpg);
-
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .food-card-restaurant{

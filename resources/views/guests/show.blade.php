@@ -2,8 +2,9 @@
 
 @section('content')
 <div id="dish">
+    <h1 class='p-3'>{{$restaurant->name}}</h1>
      <div class="container">
-          <h1>Menu del ristorante {{$restaurant->name}}</h1>
+        
 
            <input type="hidden" value="{{$restaurant->id}}"
            id="restaurantId">
@@ -54,20 +55,31 @@
 
 {{-- .................................................  --}}
           <div>
-               <ul>
-                    <li v-for="dish in dishes">
-                         <h4>@{{dish.name}}</h4>
-                         <p>Descrizione: @{{dish.description}}</p>
-                         <p>Ingredienti: @{{dish.ingredients}}</p>
-                         <img :src="dish.path_img" width="300" alt="">
-                         <p>Prezzo: @{{dish.price}}€</p>
-                         <button class="btn btn-danger"
+              
+               <ul class='menu-list mt-3 p-3'>
+                   <div class='d-flex justify-content-center'>
+                        <img class='logo-menu pb-3' src="../images/menu.png" alt="">
+                   </div>
+                   
+                    <li class='dish-list' v-for="dish in dishes">
+                         <h2 class='pt-3 pb-3 pl-3'>@{{dish.name}}</h2>
+                        <div class='list-item mt-3 mb-3'>
+                            <p> <strong>Descrizione:</strong>  @{{dish.description}}</p>
+                            <p> <strong> Ingredienti:</strong>  @{{dish.ingredients}}</p>
+                            <img :src="dish.path_img" width="300" alt="">
+                            <p> <strong> Prezzo: </strong>   @{{dish.price}}€</p>
+
+                        </div>
+                        
+
+                         <button class="btn btn-aggiungi pt-2 pb-2 mb-4"
                             v-on:click="aggiungereCarrello(dish)"
                          >
-                        Aggiungere
+                        Aggiungi al carrello
                         </button>
-                         <hr>
+                        
                     </li>
+                   
                </ul>
           </div>
 
