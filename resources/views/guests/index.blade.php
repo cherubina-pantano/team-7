@@ -32,7 +32,7 @@
             <ul class="d-flex flex-wrap justify-content-center">
                 <li class="food-card-restaurant" v-for="restaurant in restaurants">
                     <a class='font-4' :href="route(restaurant.id)">@{{restaurant.name}}</a>
-                    <p>Indirizzo: @{{restaurant.address}} <br> Telefono: @{{restaurant.phone}} </p>
+                    <p> <strong> Indirizzo:</strong> @{{restaurant.address}} <br> <strong>Telefono:</strong>  @{{restaurant.phone}} </p>
                 </li>
                 
             </ul>

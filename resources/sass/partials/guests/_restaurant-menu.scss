@@ -1,9 +1,18 @@
-h1 {
+.header-menu {
     background: #212529;
-    color: orange;
-    text-align: center;
-    text-transform: uppercase;
+
+    h1 {
+        color: orange;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .btn-cart {
+        background: orange;
+        color: #212529;
+    }
 }
+
 
 .menu-list {
     box-shadow: 2px 3px 1px 1px #CD6100;
@@ -29,7 +38,7 @@ h1 {
             font-size: 18px;
         }
 
-        .btn-aggiungi {
+        .btn-darkorange {
             background: #212529;
             color: orange;
             font-size: 15px;

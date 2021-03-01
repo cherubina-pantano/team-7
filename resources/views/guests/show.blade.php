@@ -2,19 +2,18 @@
 
 @section('content')
 <div id="dish">
-    <h1 class='p-3'>{{$restaurant->name}}</h1>
-     <div class="container">
-
-
+    
            <input type="hidden" value="{{$restaurant->id}}"
            id="restaurantId">
 
 
            {{-- CARRELLO  --}}
-
-           <div class="btn-group d-block text-right ">
+    <div class='header-menu d-flex justify-content-around align-items-center'>
+            <h1 class='p-3'>{{$restaurant->name}}</h1>
+            
+         <div class="btn-group d-block text-right ">
             <div class="dropdown">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#cart">
+                <button class="btn btn-cart" data-toggle="modal" data-target="#cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge badge-light">@{{quantitaTotale}}</span>
                 </button>
@@ -52,7 +51,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container">
 {{-- .................................................  --}}
           <div>
                <ul class='menu-list mt-3 p-3'>
@@ -67,7 +68,7 @@
                             <img src="../images/food-placeholder.jpg" width="300" alt="">
                             <p> <strong> Prezzo: </strong>   @{{dish.price}}€</p>
                         </div>
-                         <button class="btn btn-aggiungi pt-2 pb-2 mb-4"
+                         <button class="btn btn-darkorange pt-2 pb-2 mb-4"
                             v-on:click="aggiungereCarrello(dish)"
                          >
                         Aggiungi al carrello

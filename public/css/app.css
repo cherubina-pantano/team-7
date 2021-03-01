@@ -10414,7 +10414,7 @@ body {
   width: 100%;
   min-height: 100%;
   display: block;
-  transition: transform 4s;
+  transition: transform 2s;
 }
 
 .img-text {
@@ -10549,16 +10549,25 @@ body {
 
 .food-card-restaurant {
   position: relative;
-  background: #fcbf49;
+  background: #fce88b;
   color: #000;
   overflow: hidden;
-  padding: 3px;
-  border-radius: 16px;
-  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 10px;
+  border: 8px solid orange;
+  border-style: double;
   box-shadow: 2px 3px 1px 1px #cd6100;
-  width: 40%;
+  width: 300px;
+  height: 170px;
   text-align: center;
   margin: 25px 10px;
+  transition-duration: 0.3s;
+}
+.food-card-restaurant:hover {
+  transform: scale(1.1);
+}
+.food-card-restaurant p {
+  font-size: 16px;
 }
 
 .no-restaurant {
@@ -10567,11 +10576,17 @@ body {
   padding: 40px;
 }
 
-h1 {
+.header-menu {
   background: #212529;
+}
+.header-menu h1 {
   color: orange;
   text-align: center;
   text-transform: uppercase;
+}
+.header-menu .btn-cart {
+  background: orange;
+  color: #212529;
 }
 
 .menu-list {
@@ -10595,13 +10610,13 @@ h1 {
 .menu-list .dish-list p {
   font-size: 18px;
 }
-.menu-list .dish-list .btn-aggiungi {
+.menu-list .dish-list .btn-darkorange {
   background: #212529;
   color: orange;
   font-size: 15px;
   font-weight: bold;
 }
-.menu-list .dish-list .btn-aggiungi:hover {
+.menu-list .dish-list .btn-darkorange:hover {
   background: orange;
   color: #212529;
 }
@@ -10706,4 +10721,26 @@ ul {
     width: 100%;
     margin-bottom: 30px;
   }
+}
+.container-dark {
+  background-color: #212529;
+}
+.container-dark .btn-orange {
+  background: orange;
+  color: #212529;
+  font-size: 15px;
+  font-weight: bold;
+}
+.container-dark .btn-orange:hover {
+  background: #fce88b;
+  color: #212529;
+}
+.container-dark .restaurant-create {
+  color: #fff;
+  border: 10px solid orange;
+  border-style: double;
+  padding: 10px;
+}
+.container-dark .restaurant-create p {
+  font-size: 18px;
 }
