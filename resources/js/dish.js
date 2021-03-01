@@ -10,6 +10,12 @@ const dish = new Vue({
 
     },
     created() {
+        let datiDB = JSON.parse(localStorage.getItem('dish-vue'));
+        if(datiDB === null) {
+            this.carrello = [];
+        } else {
+            this.carrello = datiDB;
+        }
         this.id = document.getElementById('restaurantId').value;
         // console.log(this.id);
         axios.get('http://127.0.0.1:8000/api/dishesFilter', {
@@ -35,7 +41,7 @@ const dish = new Vue({
             for(let key in this.carrello) {
                 somma = somma + (this.carrello[key].dish.price * this.carrello[key].quantita);
             }
-            return somma
+            return somma.toFixed(2)
         },
         quantitaTotale() {
             let quantita = 0;
@@ -43,6 +49,7 @@ const dish = new Vue({
                 quantita = quantita + (this.carrello[key].quantita);
             }
             return quantita
+
         }
     },
 
@@ -62,6 +69,7 @@ const dish = new Vue({
             } else {
                 this.carrello.push({dish: dish, quantita: 1})
             }
+            localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
         },
         rimuovereCarrello(dish){
             if(this.carrello[dish].quantita > 1) {
@@ -69,6 +77,7 @@ const dish = new Vue({
             } else {
                 this.carrello.splice(dish, 1)
             }
+            localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
         }
     } // --> fine methods
 

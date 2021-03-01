@@ -14456,6 +14456,14 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   created: function created() {
     var _this = this;
 
+    var datiDB = JSON.parse(localStorage.getItem('dish-vue'));
+
+    if (datiDB === null) {
+      this.carrello = [];
+    } else {
+      this.carrello = datiDB;
+    }
+
     this.id = document.getElementById('restaurantId').value; // console.log(this.id);
 
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('http://127.0.0.1:8000/api/dishesFilter', {
@@ -14480,7 +14488,7 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
         somma = somma + this.carrello[key].dish.price * this.carrello[key].quantita;
       }
 
-      return somma;
+      return somma.toFixed(2);
     },
     quantitaTotale: function quantitaTotale() {
       var quantita = 0;
@@ -14512,6 +14520,8 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
           quantita: 1
         });
       }
+
+      localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
     },
     rimuovereCarrello: function rimuovereCarrello(dish) {
       if (this.carrello[dish].quantita > 1) {
@@ -14519,6 +14529,8 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       } else {
         this.carrello.splice(dish, 1);
       }
+
+      localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
     }
   } // --> fine methods
 
