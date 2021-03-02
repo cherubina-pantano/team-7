@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+.text-white {
+  color: #fff;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10015,7 +10019,7 @@ body {
   line-height: 1.5;
 }
 
-/* UTILITIES PAOLO  */
+/* UTILITIES  */
 .title-text {
   font-size: 40px;
   text-align: center;
@@ -10641,7 +10645,7 @@ ul {
 }
 
 .footer {
-  background-color: #24262b;
+  background-color: #212529;
   padding: 70px 0;
 }
 
@@ -10743,4 +10747,31 @@ ul {
 }
 .container-dark .restaurant-create p {
   font-size: 18px;
+}
+
+.title-menu {
+  font-size: 42px;
+  font-weight: bold;
+  border-bottom: 5px solid orange;
+}
+
+h3 {
+  font-size: 21px;
+}
+
+hr {
+  border-top: 3px solid rgba(255, 165, 0, 0.5);
+  margin-bottom: 0;
+}
+
+.btn-delete {
+  color: #212529;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #e3342f;
+  border-color: #e3342f;
+}
+.btn-delete:hover {
+  background-color: orange;
+  border-color: orange;
 }

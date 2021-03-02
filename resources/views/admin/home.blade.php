@@ -49,15 +49,15 @@
 
              </section>
 
-         <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" ><input type="submit" class='btn btn-orange d-inline' value='Edit'></a>
+         <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" ><input type="submit" class='btn btn-orange d-inline' value='Modifica'></a>
 
             <form class='d-inline' action="{{route('admin.restaurants.destroy', $restaurant->id)}}" method='POST'>
             @csrf
             @method('DELETE')
 
-            <input type="submit" class='btn btn-orange' value='Delete'>
+            <input type="submit" class='btn btn-orange' value='Elimina'>
             </form>
-            <hr>
+            
         </div>
       
         @endforeach

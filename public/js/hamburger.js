@@ -107,7 +107,7 @@ function onClickMenu() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\team-7\resources\js\hamburger.js */"./resources/js/hamburger.js");
+module.exports = __webpack_require__(/*! C:\Users\cheru\Desktop\team-7\resources\js\hamburger.js */"./resources/js/hamburger.js");
 
 
 /***/ })
