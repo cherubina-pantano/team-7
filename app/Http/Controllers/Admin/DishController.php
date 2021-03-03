@@ -116,6 +116,7 @@ class DishController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = $request->all();
 
 
         $request->validate([

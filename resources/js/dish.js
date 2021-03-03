@@ -1,3 +1,6 @@
+require('./bootstrap');
+
+
 import Vue from 'vue';
 import axios from 'axios';
 
@@ -22,11 +25,12 @@ const dish = new Vue({
             params: {
                 id: this.id,
             }
+
         })
             .then(response => {
             // handle success
-            // console.log(response.data);
             this.dishes = response.data;
+            console.log(response.data);
 
             console.log(response.data);
             })

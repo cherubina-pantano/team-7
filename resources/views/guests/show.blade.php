@@ -65,7 +65,7 @@
                         <div class='list-item mt-3 mb-3'>
                             <p> <strong>Descrizione:</strong>  @{{dish.description}}</p>
                             <p> <strong> Ingredienti:</strong>  @{{dish.ingredients}}</p>
-                            <img src="../images/food-placeholder.jpg" width="300" alt="">
+                            <img v-bind:src="'http://127.0.0.1:8000/storage/' + dish.path_img" width="300" alt="">
                             <p> <strong> Prezzo: </strong>   @{{dish.price}}€</p>
                         </div>
                          <button class="btn btn-darkorange pt-2 pb-2 mb-4"
