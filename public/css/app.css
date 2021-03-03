@@ -3,6 +3,11 @@
   color: #fff;
 }
 
+.text-orange {
+  color: orange;
+  font-size: 24px;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -10020,59 +10025,11 @@ body {
 }
 
 /* UTILITIES  */
-.title-text {
+.title-new {
   font-size: 40px;
   text-align: center;
   text-decoration: none;
-}
-
-/* HAMBURGER NAVBAR  */
-#menu-bar {
-  width: 50px;
-  height: 10px;
-  margin: 50px 10px 10px 20px;
-  position: fixed;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.bar {
-  /* background:orange; */
-  border-radius: 10%;
-  transition: 4s;
-  color: gold;
-}
-
-.change .bar {
-  background: #fff;
-}
-
-.nav li a {
-  text-decoration: none;
-  color: orange;
-  font-size: 30px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.nav li:hover {
-  color: #fff;
-  background: orange;
-  padding-left: 10px;
-}
-
-.nav li {
-  margin: 20px 10px 10px 20px;
-  padding-top: 10px;
-  list-style-type: none;
-}
-
-.nav {
-  display: none;
-}
-
-.change-btn {
-  display: block;
+  list-style: none;
 }
 
 /* HEADER  */
@@ -10206,7 +10163,7 @@ body {
 /* MENU SECTION  */
 .menu-image {
   min-height: 80vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../images/delivery-box.jpg) center/cover fixed no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(../images/Food-Wallpaper.jpg) center/cover fixed no-repeat;
 }
 
 .menu-text {
@@ -10537,7 +10494,8 @@ body {
   }
 }
 .index {
-  background-color: orange;
+  background-color: #212529;
+  color: #ffff;
 }
 
 .font-4 {
@@ -10578,6 +10536,10 @@ body {
   text-align: center;
   color: #fff;
   padding: 40px;
+}
+
+.ricerca {
+  width: 400px;
 }
 
 .header-menu {
@@ -10724,6 +10686,173 @@ ul {
   .footer-col {
     width: 100%;
     margin-bottom: 30px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Baloo Chettan 2", cursive;
+}
+
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url("../images/verdure.jpg");
+  background-size: cover;
+}
+
+.contact .content {
+  max-width: 800px;
+  text-align: center;
+}
+
+.contact .title-content {
+  width: 120%;
+  background: #212529;
+  color: orange;
+  text-align: center;
+}
+
+.contact .content h2 {
+  font-size: 35px;
+  font-weight: 500;
+  color: #ffff;
+}
+
+.contact .content p {
+  font-weight: 300;
+  color: #ffff;
+}
+
+.container-about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.container-about .contactInfo {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-about .contactInfo .box {
+  position: relative;
+  padding: 20px 0;
+  display: flex;
+}
+
+.container-about .contactInfo .box .icon {
+  min-width: 60px;
+  height: 60px;
+  background: #ffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 25px;
+}
+
+.container-about .contactInfo .box .fas {
+  margin-left: 0px;
+}
+
+.container-about .contactInfo .box .text {
+  display: flex;
+  margin-left: 20px;
+  font-size: 16px;
+  color: #ffff;
+  flex-direction: column;
+  font-weight: 300;
+}
+
+.container-about .contactInfo .box .text h3 {
+  font-weight: 500;
+  color: orange;
+}
+
+.contactForm {
+  width: 40%;
+  padding: 40px;
+  background: #ffff;
+}
+
+.contactForm h2 {
+  font-size: 30px;
+}
+
+.contactForm .inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contactForm .inputBox input,
+.contactForm .inputBox textarea {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 2px solid orange;
+  outline: none;
+  resize: none;
+}
+
+.contactForm .inputBox span {
+  position: absolute;
+  left: 0;
+  padding: 5px 0;
+  font-size: 16px;
+  margin: 10px 0;
+  pointer-events: none;
+  transition: 0.5s;
+  color: #666;
+}
+
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span {
+  color: #e91e63;
+  font-size: 12px;
+  transform: translateY(-20px);
+}
+
+.contactForm .inputBox input[type=submit] {
+  width: 100px;
+  background: orange;
+  color: #ffff;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 991px) {
+  .contact {
+    padding: 50px;
+  }
+
+  .container-about {
+    flex-direction: column;
+  }
+
+  .container-about .contactInfo {
+    margin-bottom: 40px;
+  }
+
+  .container-about .contactInfo,
+.contactForm {
+    width: 100%;
   }
 }
 .container-dark {

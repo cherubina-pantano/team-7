@@ -9,7 +9,6 @@
 
 // SECTIONS LAYOUT GUESTS VAMOS
 @import 'partials/guests/globals';
-@import 'partials/guests/hamburger';
 @import 'partials/guests/header';
 @import 'partials/guests/about';
 @import 'partials/guests/menu';
@@ -20,6 +19,10 @@
 @import 'partials/guests/index_guest';
 @import 'partials/guests/restaurant-menu';
 @import 'partials/guests/footer';
+
+// STATIC PAGE
+@import 'partials/guests/contatti';
+
 
 @import 'admin';
 @import 'admin-dishes';
