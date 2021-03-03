@@ -17,7 +17,12 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('guests/contatti', function(){
+    return view('guests.contatti');
+})->name('contatti');
+
 Route::resource('guests', 'GuestController');
+
 
 
 // Area riservata -- rotte
@@ -33,8 +38,5 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->
 
     Route::resource('orders', 'OrderController');
 });
-Route::get('/checkout/stripe', 'CheckoutController@stripe')->name('stripe');
-Route::get('/checkout/stripepayment', 'CheckoutController@stripePayment')->name('stripepayment');
-
 
 //Route::get('/home', 'HomeController@index')->name('home');

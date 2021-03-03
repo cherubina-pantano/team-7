@@ -118,6 +118,7 @@ class DishController extends Controller
     {
         $data = $request->all();
 
+        $data = $request->all();
 
         $request->validate([
             'name' => 'required',

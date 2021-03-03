@@ -4,12 +4,12 @@
 <div id="app" >
     <div class='index'>
         <div class="container pt-4 text-center">
-             <h3>Ricerca Ristorante</h3>
+             <h3 class="text-orange">Ricerca Ristorante</h3>
 
-             <input class='rounded-pill border-0 p-1 mb-2' type="text" name="name" id="name" 
+             <input class='ricerca rounded-pill border-0 p-1 mb-2' type="text" name="name" id="name"
              v-model="name" v-on:keyup="filterType">
 
-             <h3 class='pt-4'>Ricerca tipologia ristorante</h3>
+             <h3 class='pt-4 text-orange'> Scegli Tipologia </h3>
 
                 <div class='d-flex justify-content-center mt-3'>
                       @foreach ($types as $type)
@@ -34,17 +34,17 @@
                     <a class='font-4' :href="route(restaurant.id)">@{{restaurant.name}}</a>
                     <p> <strong> Indirizzo:</strong> @{{restaurant.address}} <br> <strong>Telefono:</strong>  @{{restaurant.phone}} </p>
                 </li>
-                
+
             </ul>
         </div>
-        
+
         <h2 class="pb-4 no-restaurant" v-else>Non ci sono ristoranti che propongano questa cucina</h2>
     </div>
-       
 
-    
+
+
 </div>
-   
+
 
 
 @endsection

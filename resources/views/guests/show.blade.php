@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="dish">
-    
+
            <input type="hidden" value="{{$restaurant->id}}"
            id="restaurantId">
 
@@ -10,7 +10,7 @@
            {{-- CARRELLO  --}}
     <div class='header-menu d-flex justify-content-around align-items-center'>
             <h1 class='p-3'>{{$restaurant->name}}</h1>
-            
+
          <div class="btn-group d-block text-right ">
             <div class="dropdown">
                 <button class="btn btn-cart" data-toggle="modal" data-target="#cart">

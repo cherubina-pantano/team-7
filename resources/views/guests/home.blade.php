@@ -7,27 +7,11 @@
     </a>
 </div> --}}
 
-   <!-- Hamburger ------->
-
-        <div id ="menu" class="menu">
-            <div id="menu-bar" onclick="onClickMenu()">
-                <i class="fas fa-hamburger fa-5x bar"></i>
-                <ul id="nav"class="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">Contatti</a></li>
-                </ul>
-            </div>
-        </div>
-
-        {{-- carrello  --}}
-
 
 
     {{-- header-hero  --}}
         <header class="header">
-            <div class="container  text-right">
+             <div class="container  text-right">
                  <button class="btn btn-primary" data-toggle="modal" data-target="#cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge badge-light"></span>
@@ -38,6 +22,7 @@
                 <img src="images/logo-2.png" alt="logo">
                 <a href="{{route('guests.index')}}" class="hero-button pulsate">Visualizza Ristoranti</a>
             </div>
+
         </header>
 
 
@@ -45,7 +30,7 @@
         <section id="about">
             <!-- TITLE -->
             <div>
-                <h2 class="title-text">Consegna Fast</h2>
+                <h2 class="title-new">Consegna Fast</h2>
             </div>
 
         <div class="about-center">
@@ -141,7 +126,7 @@
 
      <!-- NUMBER SECTION  -->
         <div>
-            <h1 class="title-text">Dicono di noi...</h1>
+            <h1 class="title-new">Dicono di noi...</h1>
         </div>
 
     <div class="container-cards" id="cards-team7">
@@ -201,7 +186,7 @@
 
     <section id="food">
         <div>
-            <h2 class= "title-text">I NOSTRI PIATTI COMODAMENTE A CASA</h2>
+            <h2 class= "title-new">I NOSTRI PIATTI COMODAMENTE A CASA</h2>
         </div>
         <div class="food-container">
             <!-- ARTICOLI -->
@@ -259,7 +244,7 @@
 
     <section id="food">
         <div>
-            <h2 class= "title-text">FOOD FUSION</h2>
+            <h2 class= "title-new">FOOD FUSION</h2>
         </div>
         <div class="food-container">
             <!-- ARTICOLI -->
@@ -316,7 +301,7 @@
     <!-- COLLAGE GALLERY  -->
     <section id="collage">
         <div>
-            <h2 class="title-text">I Nostri Prodotti</h2>
+            <h2 class="title-new">I Nostri Prodotti</h2>
         </div>
             <section id="gallery-center">
              <article class="gallery-item">

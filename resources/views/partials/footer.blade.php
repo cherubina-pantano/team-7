@@ -23,10 +23,10 @@
                             </ul>
                     </div>
                     <div class="footer-col">
-                        <h4>Shop Online</h4>
+                        <h4>Contatti</h4>
                             <ul>
-                                <li> <a href="">Promozioni</a> </li>
-                                <li> <a href="">Ordini Per Ricevimenti</a> </li>
+                                <li> <a href="{{ route('contatti') }}">Pagina di Contatto</a> </li>
+                                <li> <a href="">Email</a> </li>
                                 <li> <a href="">Gadget</a> </li>
                             </ul>
                     </div>

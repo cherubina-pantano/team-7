@@ -13,7 +13,6 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/dish.js', 'public/js/dish.js')
-    .js('resources/js/hamburger.js', 'public/js/hamburger.js')
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css')
     .options({
