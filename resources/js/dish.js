@@ -76,11 +76,9 @@ const dish = new Vue({
             localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
         },
         rimuovereCarrello(dish){
-            if(this.carrello[dish].quantita > 1) {
-                this.carrello[dish].quantita--;
-            } else {
-                this.carrello.splice(dish, 1)
-            }
+
+            this.carrello.splice(dish, 1)
+
             localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
         }
     } // --> fine methods

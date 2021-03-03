@@ -21,6 +21,8 @@ Route::get('guests/contatti', function(){
     return view('guests.contatti');
 })->name('contatti');
 
+Route::get('guests/riepilogo', 'CartController@cart')->name('riepilogo');
+
 Route::resource('guests', 'GuestController');
 
 

@@ -1,16 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div id="dish">
-
-           <input type="hidden" value="{{$restaurant->id}}"
-           id="restaurantId">
-
-
-           {{-- CARRELLO  --}}
     <div class='header-menu d-flex justify-content-around align-items-center'>
-            <h1 class='p-3'>{{$restaurant->name}}</h1>
-
          <div class="btn-group d-block text-right ">
             <div class="dropdown">
                 <button class="btn btn-cart" data-toggle="modal" data-target="#cart">
@@ -44,9 +37,7 @@
                             </div>
                             <div class="modal-footer">
                                 Totale: @{{carrelloTotale}} €
-                               <a href="{{ route('riepilogo') }}">
-                                    <button type="submit" class="btn btn-primary">Checkout</button>
-                                </a>
+                                <button data-dismiss="modal" class="btn btn-primary">Checkout</button>
                             </div>
                         </div>
                     </div>
@@ -54,45 +45,21 @@
             </div>
         </div>
     </div>
-
     <div class="container">
-{{-- .................................................  --}}
-          <div>
-               <ul class='menu-list mt-3 p-3'>
-                   <div class='d-flex justify-content-center'>
-                        <img class='logo-menu pb-3' src="../images/menu.png" alt="">
-                   </div>
-                    <li class='dish-list' v-for="dish in dishes" v-show="dish.available == 1">
-                         <h2 class='pt-3 pb-3 pl-3'>@{{dish.name}}</h2>
-                        <div class='list-item mt-3 mb-3'>
-                            <p> <strong>Descrizione:</strong>  @{{dish.description}}</p>
-                            <p> <strong> Ingredienti:</strong>  @{{dish.ingredients}}</p>
-                            <img v-bind:src="'http://127.0.0.1:8000/storage/' + dish.path_img" width="300" alt="">
-                            <p> <strong> Prezzo: </strong>   @{{dish.price}}€</p>
-                        </div>
-                         <button class="btn btn-darkorange pt-2 pb-2 mb-4"
-                            v-on:click="aggiungereCarrello(dish)"
-                         >
-                        Aggiungi al carrello
-                        </button>
-                    </li>
-                </ul>
-          </div>
-
-
-
-
-
+          <ul>
+            <li class='dish-list' v-for="(dishCarrello, index) in carrello">
+                <h2 class='pt-3 pb-3 pl-3'>@{{dishCarrello.dish.name}}</h2>
+               <div class='list-item mt-3 mb-3'>
+                   <img v-bind:src="'http://127.0.0.1:8000/storage/' + dishCarrello.dish.path_img" width="300" alt="">
+               </div>
+           </li>
+           <p>@{{quantitaTotale}}</p>
+           <p> <strong> Totale: </strong> @{{carrelloTotale}} €</p>
+          </ul>
        </div>
-
     </div>
 </div>
-
-   {{-- @foreach($dishes as $dish)
-        <h3>{{ $dish->name}}</h3>
-   @endforeach --}}
 
 @endsection
 
 <script src="{{asset('js/dish.js')}}"></script>
-

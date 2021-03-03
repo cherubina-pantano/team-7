@@ -49725,12 +49725,7 @@ var dish = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
       localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
     },
     rimuovereCarrello: function rimuovereCarrello(dish) {
-      if (this.carrello[dish].quantita > 1) {
-        this.carrello[dish].quantita--;
-      } else {
-        this.carrello.splice(dish, 1);
-      }
-
+      this.carrello.splice(dish, 1);
       localStorage.setItem('dish-vue', JSON.stringify(this.carrello));
     }
   } // --> fine methods
