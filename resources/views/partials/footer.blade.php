@@ -9,7 +9,7 @@
                             <ul>
                                 <li> <a href=""> About Us </a> </li>
                                 <li> <a href=""> I Nostri Servizi</a> </li>
-                                <li> <a href="">Aziende Partner</a> </li>
+                                <li> <a href="{{ route('partners') }}">Aziende Partner</a> </li>
                                 <li> <a href="">Novità</a> </li>
                             </ul>
                     </div>
@@ -18,16 +18,16 @@
                             <ul>
                                 <li> <a href="">FAQ</a> </li>
                                 <li> <a href="">Resi</a> </li>
-                                <li> <a href="">Stato degli Ordini</a> </li>
+                                <li> <a href="{{route('riepilogo')}}">Stato degli Ordini</a> </li>
                                 <li> <a href="">Opzioni di Pagamento</a> </li>
                             </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Contatti</h4>
                             <ul>
-                                <li> <a href="{{ route('contatti') }}">Pagina di Contatto</a> </li>
-                                <li> <a href="">Email</a> </li>
-                                <li> <a href="">Gadget</a> </li>
+                                <li> <a href="{{ route('contatti') }}">Email & Contatti</a> </li>
+                                <li> <a href="">Google Maps</a> </li>
+                                <li> <a href="{{ route('gadget') }}">Gadget</a> </li>
                             </ul>
                     </div>
                     <div class="footer-col">

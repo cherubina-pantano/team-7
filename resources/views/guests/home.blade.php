@@ -108,7 +108,7 @@
                     <p>I nostri Menu propongono una cucina che utilizza principalmente pesce,carne, verdure di stagione, pasta, dolci preparati dalle migliori pasticcerie, mozzarella freschissima, selezione vegana, cucina orientale, fastfood, pizzeria e friggitoria. Tutto lavorato, preparato e cucinato dai migliori produttori della città.
                     Su richiesta o prenotazione possiamo offrire anche menù completi a base di pesce freschissimo.
                     </p>
-                    <a href="#">Esplora</a>
+                    <a href="{{route('guests.index')}}">Esplora</a>
                 </div>
             </article>
         </section>
@@ -117,17 +117,18 @@
      <!-- SOCIALS SECTION  -->
 
         <section id="social-icons">
-            <a href="#"> <i class="fab fa-facebook facebook"></i>
-            <a href="#"> <i class="fab fa-twitter twitter"></i>
-            <a href="#"> <i class="fab fa-instagram instagram"></i>
-            <a href="#"> <i class="fab fa-google-plus plus"></i>
+            <a href="#"> <i class="fab fa-facebook facebook"></i></a>
+            <a href="#"> <i class="fab fa-twitter twitter"></i></a>
+            <a href="#"> <i class="fab fa-instagram instagram"></i></a>
+            <a href="#"> <i class="fab fa-google-plus plus"></i></a>
 
         </section>
 
      <!-- NUMBER SECTION  -->
-        <div>
-            <h1 class="title-new">Dicono di noi...</h1>
-        </div>
+
+     <div>
+         <h1 class="text-center">Dicono di noi...</h1>
+     </div>
 
     <div class="container-cards" id="cards-team7">
 
@@ -186,7 +187,7 @@
 
     <section id="food">
         <div>
-            <h2 class= "title-new">I NOSTRI PIATTI COMODAMENTE A CASA</h2>
+            <h1 class="text-center">I NOSTRI PIATTI COMODAMENTE A CASA</h1>
         </div>
         <div class="food-container">
             <!-- ARTICOLI -->
@@ -244,7 +245,7 @@
 
     <section id="food">
         <div>
-            <h2 class= "title-new">FOOD FUSION</h2>
+            <h2 class="text-center">FOOD FUSION</h2>
         </div>
         <div class="food-container">
             <!-- ARTICOLI -->
@@ -301,7 +302,7 @@
     <!-- COLLAGE GALLERY  -->
     <section id="collage">
         <div>
-            <h2 class="title-new">I Nostri Prodotti</h2>
+            <h2 class="text-center">I Nostri Prodotti</h2>
         </div>
             <section id="gallery-center">
              <article class="gallery-item">

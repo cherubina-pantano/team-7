@@ -17,9 +17,21 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', 'HomeController@index')->name('home');
 
+// ROTTE STATICHE
+
 Route::get('guests/contatti', function(){
     return view('guests.contatti');
 })->name('contatti');
+
+Route::get('guests/partners', function(){
+    return view('guests.partners');
+})->name('partners');
+
+Route::get('guests/gadget', function(){
+    return view('guests.gadget');
+})->name('gadget');
+
+
 
 Route::get('guests/riepilogo', 'CartController@cart')->name('riepilogo');
 

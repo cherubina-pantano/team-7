@@ -20,8 +20,9 @@
                 </div>
             </div>
 
-            
-        <a href="{{route('admin.dishes.index')}}" ><input type="submit" class='btn btn-orange mt-5' value='Vedi menu'></a>
+
+        <a href="{{route('admin.dishes.index')}}" >
+            <input type="submit" class='btn btn-orange mt-5' value='Vedi menu'></a>
 
         <a href="{{route('admin.dishes.create')}}" ><input type="submit" class='btn btn-orange mt-5' value='Nuovo piatto'></a>
 
@@ -57,12 +58,12 @@
 
             <input type="submit" class='btn btn-orange' value='Elimina'>
             </form>
-            
+
         </div>
-      
+
         @endforeach
 
-        
+
       </div>
     </div>
 

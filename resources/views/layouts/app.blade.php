@@ -59,9 +59,9 @@
                             <a class='nav-link' href="{{route('admin.home')}}">Dashboard</a>
                         </li>
 
-                        <li class='nav-item'>
+                        {{-- <li class='nav-item'>
                             <a class='nav-link' href="{{route('admin.restaurants.index')}}">Indice Ristoranti</a>
-                        </li>
+                        </li> --}}
 
                         <li class='nav-item'>
                             <a class='nav-link' href="{{route('admin.restaurants.create')}}">Crea nuovo Ristorante</a>

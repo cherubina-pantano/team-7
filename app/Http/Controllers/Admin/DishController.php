@@ -88,9 +88,15 @@ class DishController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
+         $data = $request->all();
+        //  $data['restaurant_id'] = Restaurant::find($id);
 
+        $dishes = Dish::all();
+        // $restaurants = Restaurant::all();
+        // dd($data);
+        return view('admin.dishes.show', compact('dishes'));
 
     }
 
