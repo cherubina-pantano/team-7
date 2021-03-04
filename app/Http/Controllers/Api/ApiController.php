@@ -61,8 +61,9 @@ class ApiController extends Controller
         $data = $request->all();
 
         $dishes_search = DB::table('dishes')
-        ->where('restaurant_id', '=', $data['id'])
+        ->where('restaurant_id', '=', $data['id'])        
         ->select('dishes.id', 'dishes.name', 'dishes.restaurant_id', 'dishes.description', 'dishes.ingredients','dishes.path_img', 'dishes.price', 'dishes.available')
+        ->orderBy('dishes.name')
         ->get();
 
         //dd($dishes_search);

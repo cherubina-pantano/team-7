@@ -2,11 +2,11 @@
 
 @section('content')
 <div class='container-dark'>
-<div class="container">
+<div class="container ">
     <div class="row justify-content-center">
 
         <div class="col-md-8">
-            <div class="card mt-3">
+          {{--   <div class="card mt-3">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
@@ -17,16 +17,29 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                </div>
+                </div>               
+            </div> --}}
+            <div class="mt-5 mb-5">
+                <h2 class="text-orange text-center">
+                    Ciao! Benvenuto su Fast&Food!
+                </h2>
+                <a class='nav-link text-orange text-center' href="{{route('admin.restaurants.create')}}">Crea il tuo ristorante</a>
             </div>
 
-
-        <a href="{{route('admin.dishes.index')}}" >
-            <input type="submit" class='btn btn-orange mt-5' value='Vedi menu'></a>
-
-        <a href="{{route('admin.dishes.create')}}" ><input type="submit" class='btn btn-orange mt-5' value='Nuovo piatto'></a>
-
-        <a href="{{route('admin.orders.index')}}"><input type="submit" class='btn btn-orange mt-5' value='Ordini'></a>
+            <div class="d-flex justify-content-center ">
+                <a  href="{{route('admin.dishes.index')}}" >
+                    <input type="submit" class='btn btn-orange mt-5 ' value='Vedi menu'>
+                </a>
+        
+                <a class="mr-2 ml-2" href="{{route('admin.dishes.create')}}" >
+                    <input type="submit" class='btn btn-orange mt-5 text-center' value='Nuovo piatto'>
+                </a>
+        
+                <a  href="{{route('admin.orders.index')}}">
+                    <input type="submit" class='btn btn-orange mt-5 text-center' value='Ordini'>
+                </a>
+            </div>
+      
 
         @if(session('restaurant-deleted'))
                 <div class = "alert alert-success mt-5">

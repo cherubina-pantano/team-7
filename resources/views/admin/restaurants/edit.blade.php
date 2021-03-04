@@ -44,7 +44,7 @@
             </div>
 
              {{-- check TYPE  --}}
-             <div class='form-group text-white'>
+             <div class='form-group text-white d-flex justify-content-sm-between'>
                @foreach ($types as $type)
                     <div class="form-check">
                         <input class='form-check-input' type="checkbox" name="types[]" id="type-{{$type->id}}" value="{{$type->id}}"

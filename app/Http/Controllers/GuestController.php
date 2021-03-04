@@ -64,12 +64,13 @@ class GuestController extends Controller
         
         //$dishes = Dish::where('restaurant_id', $id)->get();
         //$restaurant_id = $id;
+        // $dishes = Dish::orderBy('name', 'asc')->get();
         
-        $dishes = Dish::find($id)->get();
+        $dish = Dish::find($id);
 
-        // dd($dishes);
+        // dd($dishes, $dish);
         // dump($dishes);
-        return view('guests.show', compact('dishes', 'restaurant'));
+        return view('guests.show', compact('dish', 'restaurant'));
     }
 
     /**
