@@ -55,9 +55,39 @@
         </div>
     </div>
 
-    <div class="container">
-{{-- .................................................  --}}
-          <div>
+    {{-- ...................................................  --}}
+
+        <div class="wrapper-piatti">
+            <div class="title-piatti">
+                <img src="../images/menu.png" alt="">
+            </div>
+
+            <ul class="menu-piatti">
+
+                <li class="single-menu-piatti"  v-for="dish in dishes" v-show="dish.available == 1">
+                    <img v-bind:src="'http://127.0.0.1:8000/storage/' + dish.path_img" alt="">
+                    <div class="menu-content-piatti">
+                        <h4>@{{dish.name}}<span>@{{dish.price}}€</span></h4>
+                        <p> @{{dish.description}}</p>
+                        <p> @{{dish.ingredients}}</p>
+                         <button class="btn btn-darkorange pt-2 pb-2 mb-4"
+                            v-on:click="aggiungereCarrello(dish)"
+                         >
+                        Aggiungi al carrello
+                        </button>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+
+
+
+
+
+
+{{-- <div>
                <ul class='menu-list mt-3 p-3'>
                    <div class='d-flex justify-content-center'>
                         <img class='logo-menu pb-3' src="../images/menu.png" alt="">
@@ -77,13 +107,13 @@
                         </button>
                     </li>
                 </ul>
-          </div>
+          </div> --}}
 
 
 
 
 
-       </div>
+    </div>
 
     </div>
 </div>

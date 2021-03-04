@@ -26,7 +26,7 @@
                         <h4>Contatti</h4>
                             <ul>
                                 <li> <a href="{{ route('contatti') }}">Email & Contatti</a> </li>
-                                <li> <a href="">Google Maps</a> </li>
+                                <li> <a href="{{ route('google') }}">Google Maps</a> </li>
                                 <li> <a href="{{ route('gadget') }}">Gadget</a> </li>
                             </ul>
                     </div>

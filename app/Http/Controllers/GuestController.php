@@ -21,7 +21,7 @@ class GuestController extends Controller
         $types = Type::all();
         //$dishes = Dish::all();
 
-       
+
 
         return view('guests.index', compact('restaurants', 'types'));
 
@@ -61,11 +61,11 @@ class GuestController extends Controller
         // $restaurants = Restaurant::where('id', Auth::id())->get();
 
        $restaurant = Restaurant::find($id);
-        
+
         //$dishes = Dish::where('restaurant_id', $id)->get();
         //$restaurant_id = $id;
-        
-        $dishes = Dish::find($id)->get();
+
+        $dishes = Dish::find($id);
 
         // dd($dishes);
         // dump($dishes);
