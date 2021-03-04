@@ -29,15 +29,19 @@ const dish = new Vue({
         })
             .then(response => {
             // handle success
+            response.data.forEach((dish) => {
+                dish.showMe = false;
+            }); 
             this.dishes = response.data;
+            
             console.log(response.data);
-
-            console.log(response.data);
+            
             })
             .catch(error => {
             // handle error
             console.log(error);
             });
+            
         },
     computed: {
         carrelloTotale() {
