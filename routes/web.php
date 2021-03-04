@@ -31,6 +31,10 @@ Route::get('guests/gadget', function(){
     return view('guests.gadget');
 })->name('gadget');
 
+Route::get('guests/google', function(){
+    return view('guests.google');
+})->name('google');
+
 
 
 Route::get('guests/riepilogo', 'CartController@cart')->name('riepilogo');

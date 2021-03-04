@@ -198,10 +198,10 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
+
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -214,10 +214,10 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
+
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -230,10 +230,10 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
+
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -256,10 +256,9 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -272,10 +271,9 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -288,10 +286,9 @@
                 </div>
                 <div class="img-footer">
                     <div class="footer-icon">
-                        <i class="fas fa-dollar-sign">25</i>
                     </div>
                     <div class="footer-btn">
-                        <button type="button" class="food-btn">Ordina Adesso</button>
+                        <a href="{{route('guests.index')}}"><button type="button" class="food-btn">Ordina Adesso</button></a>
                     </div>
                 </div>
             </article>
@@ -322,31 +319,31 @@
             </article>
 
             <article class="gallery-item">
-                <a href="images/verdure.jpg">
-                    <img src="images/misto7.jpg" alt="">
-                </a>
-            </article>
-
-            <article class="gallery-item">
-                <a href="images/misto5.jpg">
-                    <img src="images/misto6.jpg" alt="">
+                <a href="images/takeaway.jpg">
+                    <img src="images/takeaway.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
                 <a href="images/misto6.jpg">
-                    <img src="images/misto7.jpg" alt="">
+                    <img src="images/misto6.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
-                <a href="images/misto7.jpg">
+                <a href="images/hamburger.jpg">
+                    <img src="images/hamburger.jpg" alt="">
+                </a>
+            </article>
+
+            <article class="gallery-item">
+                <a href="images/pizza.jpg">
                     <img src="images/pizza.jpg" alt="">
                 </a>
             </article>
 
             <article class="gallery-item">
-                <a href="images/misto7.jpg">
+                <a href="images/vegan.jpg">
                     <img src="images/vegan.jpg" alt="">
                 </a>
             </article>

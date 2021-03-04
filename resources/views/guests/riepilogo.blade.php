@@ -3,7 +3,8 @@
 <div id="dish">
     <div class='header-menu d-flex justify-content-around align-items-center'>
          <div class="btn-group d-block">
-            <div class="dropdown">
+            <div class="d-flex p-3 align-items-center">
+                <h4 class="text-orange mr-3">Riepilogo Ordine</h4>
                 <button class="btn btn-cart text-right" data-toggle="modal" data-target="#cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge badge-light">@{{quantitaTotale}}</span>
@@ -50,9 +51,10 @@
                 <div class='list-item mt-3 mb-3'>
                    <img v-bind:src="'http://127.0.0.1:8000/storage/' + dishCarrello.dish.path_img" width="300" alt="">
                 </div>
-           </li>
-           <p class="font-weight-bold">Quantità: @{{quantitaTotale}}</p>
-           <p class="riepilogo_totale"><strong> Totale: </strong> @{{carrelloTotale}} €</p>
+                <p class="font-weight-bold">Prezzo: @{{dishCarrello.quantita * dishCarrello.dish.price}} € </p>
+            </li>
+            <p class="font-weight-bold">Quantità: @{{quantitaTotale}}</p>
+            <p class="riepilogo_totale"><strong> Totale: </strong> @{{carrelloTotale}} €</p>
         </ul>
     </div>
 </div>
