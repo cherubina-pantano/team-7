@@ -27,17 +27,17 @@
             </div>
 
             <div class="d-flex justify-content-center ">
-                <a  href="{{route('admin.dishes.index')}}" >
+                {{-- <a  href="{{route('admin.dishes.index')}}" >
                     <input type="submit" class='btn btn-orange mt-5 ' value='Vedi menu'>
-                </a>
+                </a> --}}
         
-                <a class="mr-2 ml-2" href="{{route('admin.dishes.create')}}" >
+                {{-- <a class="mr-2 ml-2" href="{{route('admin.dishes.create')}}" >
                     <input type="submit" class='btn btn-orange mt-5 text-center' value='Nuovo piatto'>
-                </a>
+                </a> --}}
         
-                <a  href="{{route('admin.orders.index')}}">
+                {{-- <a  href="{{route('admin.orders.index')}}">
                     <input type="submit" class='btn btn-orange mt-5 text-center' value='Ordini'>
-                </a>
+                </a> --}}
             </div>
       
 
@@ -63,7 +63,12 @@
 
              </section>
 
-         <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" ><input type="submit" class='btn btn-orange d-inline' value='Modifica'></a>
+         <a href="{{route('admin.restaurants.edit', $restaurant->id)}}" ><input type="submit" class='btn btn-orange d-inline' value='Modifica Ristorante'></a>
+         <a href="{{route('admin.dishes.show', $restaurant->id)}}" ><input type="submit" class='btn btn-orange d-inline' value='Vedi Menu'></a>
+         {{-- <a class="mr-2 ml-2" href="{{route('admin.dishes.create', $restaurant->id)}}" >
+            <input type="submit" class='btn btn-orange mt-5 text-center' value='Nuovo piatto'>
+        </a> --}}
+
 
             <form class='d-inline' action="{{route('admin.restaurants.destroy', $restaurant->id)}}" method='POST'>
             @csrf

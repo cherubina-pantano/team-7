@@ -29,9 +29,9 @@ class DishController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        return view('admin.dishes.create');
+        return view('admin.dishes.create', compact('id'));
     }
 
     /**
@@ -46,8 +46,8 @@ class DishController extends Controller
 
         $data['slug'] = Str::slug($data['name'], '-');
 
-        $data['restaurant_id'] = Auth::id();
-
+        //$data['restaurant_id'] = Auth::id();
+        // $data['restaurant_id'] = 
 
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
 
@@ -76,7 +76,7 @@ class DishController extends Controller
         $saved = $newDish->save();
 
         if($saved) {
-            return redirect()->route('admin.dishes.index');
+            return redirect()->route('admin.dishes.show', $data['restaurant_id']);
         } else {
             return redirect()->route('admin.dishes.create');
         }
@@ -99,7 +99,7 @@ class DishController extends Controller
 
         // dd($dishes);
         // dump($dishes);
-        return view('admin.dishes.show', compact('dishes', $id));
+        return view('admin.dishes.show', compact('dishes', 'id'));
 
     }
 

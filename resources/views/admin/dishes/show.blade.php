@@ -18,6 +18,10 @@
             <p class="text-white text-center pt-3">Elenco piatti</p>
         @endif
 
+        <a class="mr-2 ml-2" href="{{route('admin.dishes.create', $id)}}" >
+            <input type="submit" class='btn btn-orange mt-5 text-center' value='Aggiungi piatto'>
+        </a>
+
         @foreach ($dishes as $dish)
 
             <h3 class='mt-4 text-white'>{{$dish->name}}</h3>
