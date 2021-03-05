@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,7 +53,15 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->middleware('auth')->
     //rotte crud
     Route::resource('restaurants', 'RestaurantController');
 
-    Route::resource('dishes', 'DishController');
+    //Route::get('newrestaurant/{id}', 'DishController@create')->name('newrestaurant.create');
+
+    Route::get('dishes/create/{id}', [
+        'as' => 'dishes.create',
+        'uses' => 'DishController@create'
+    ]);
+    Route::resource('dishes', 'DishController')->except(['create']);
+
+    //Route::resource('dishes', 'DishController', ['except' => 'create']);
 
     Route::resource('orders', 'OrderController');
 });

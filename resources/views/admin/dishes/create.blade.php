@@ -21,6 +21,9 @@
             @csrf
             @method('POST')
 
+            <input type="hidden" value="{{$id}}" name="restaurant_id"
+            id="restaurant_id">
+
             <div class='form-group text-white'>
                 <label for="name">Nome Piatto</label>
 

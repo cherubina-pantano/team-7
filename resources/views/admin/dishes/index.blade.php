@@ -18,6 +18,9 @@
             <p class="text-white text-center pt-3">Elenco piatti</p>
         @endif
 
+       
+        
+
         @foreach ($dishes as $dish)
 
             <h3 class='mt-4 text-white'>{{$dish->name}}</h3>
