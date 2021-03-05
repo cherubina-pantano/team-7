@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class='container-dark'>
+<div class='container-dark '>
     <div class="container">
 
         <h1 class='text-white pt-3 pb-3 text-center title-menu'>Menu</h1>
@@ -18,8 +18,8 @@
             <p class="text-white text-center pt-3">Elenco piatti</p>
         @endif
 
-       
-        
+
+
 
         @foreach ($dishes as $dish)
 

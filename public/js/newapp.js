@@ -49658,7 +49658,7 @@ var newapp = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\cheru\Desktop\team-7\resources\js\newapp.js */"./resources/js/newapp.js");
+module.exports = __webpack_require__(/*! C:\Users\franc\Desktop\team-7\resources\js\newapp.js */"./resources/js/newapp.js");
 
 
 /***/ })

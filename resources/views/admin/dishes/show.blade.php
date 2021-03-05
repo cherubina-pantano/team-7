@@ -18,7 +18,7 @@
             <p class="text-white text-center pt-3">Elenco piatti</p>
         @endif
 
-        <a class="mr-2 ml-2" href="{{route('admin.dishes.create', $id)}}" >
+        <a class="mr-2 ml-2 " href="{{route('admin.dishes.create', $id)}}" >
             <input type="submit" class='btn btn-orange mt-5 text-center' value='Aggiungi piatto'>
         </a>
 
@@ -36,7 +36,7 @@
                 @if (!empty($dish->path_img))
                     <img class="mb-3" width="250" src="{{asset('storage/' . $dish->path_img)}}" alt="{{$dish->name}}">
                 @else
-                    <img class="mb-3" width="250" src="{{asset('')}}" alt="{{$dish->name}}">
+                    <img class="mb-3" width="250" src="{{asset('../images/food-placeholder.jpg')}}" alt="{{$dish->name}}">
                 @endif
             </div>
 

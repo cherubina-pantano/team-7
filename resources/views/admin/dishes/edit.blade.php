@@ -35,7 +35,7 @@
                     <option value="contorno">Contorno</option>
                     <option value="dolce">Dolce</option>
                 </select>
-              
+
             </div>
 
             <div class='form-group text-white'>
@@ -66,30 +66,30 @@
             </div>
             <div class="form-check text-white">
                 <input class="form-check-input" type="radio" name="gluten" id="gluten2" value="false" checked>
-                <label class="form-check-label text-white" for="gluten2">No</label>                
+                <label class="form-check-label text-white" for="gluten2">No</label>
             </div>
 
 
             <label class="text-white">Disponibilità:</label>
             <div class="form-check text-white">
                 <input class="form-check-input" type="radio" name="available" id="available1" value="true" checked>
-                <label class="form-check-label text-white" for="available1">Sì</label>                  
+                <label class="form-check-label text-white" for="available1">Sì</label>
             </div>
             <div class="form-check text-white">
                 <input class="form-check-input" type="radio" name="available" id="available2" value="false" checked>
                 <label class="form-check-label text-white" for="available2">No</label>
             </div>
-             
-            <div class='form-group text-white'>
+
+            {{-- <div class='form-group text-white'>
                 <label for="path_img">Modifica immagine</label>
                 <input class="form-control" type="file" name="path_img" id="path_img" accept="image/*">
-            </div>
+            </div> --}}
 
             <a href="{{route('admin.dishes.update', $dish->id)}}"><input type="submit" class='btn btn-orange' value='Salva modifica'></a>
-            
+
         </form>
 
     </div>
 </div>
-    
+
 @endsection

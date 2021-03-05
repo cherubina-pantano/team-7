@@ -47,7 +47,7 @@ class DishController extends Controller
         $data['slug'] = Str::slug($data['name'], '-');
 
         //$data['restaurant_id'] = Auth::id();
-        // $data['restaurant_id'] = 
+        // $data['restaurant_id'] =
 
         $data['available'] = ($data['available'] == 'true') ? 1 : 0;
 
@@ -91,8 +91,8 @@ class DishController extends Controller
     public function show($id)
     {
         // $restaurant = Restaurant::find($id);
-        
-             
+
+
         $dishes = Dish::where('restaurant_id', $id)->get();
         // $dishes = Dish::all();
         $restaurant_id = $id;
@@ -145,9 +145,11 @@ class DishController extends Controller
 
         $dish = Dish::find($id);
 
+        // $restaurant_id = $dish->restaurant_id;
+
         $updated = $dish->update($data);
         if($updated) {
-            return redirect()->route('admin.dishes.index', $dish->id);
+            return redirect()->route('admin.dishes.show', $dish->restaurant_id);
         } else {
             return redirect()->route('admin.dishes.edit');
         }
