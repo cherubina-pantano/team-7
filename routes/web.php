@@ -35,6 +35,9 @@ Route::get('guests/google', function(){
     return view('guests.google');
 })->name('google');
 
+Route::get('guests/azienda', function(){
+    return view('guests.azienda');
+})->name('azienda');
 
 
 Route::get('guests/riepilogo', 'CartController@cart')->name('riepilogo');

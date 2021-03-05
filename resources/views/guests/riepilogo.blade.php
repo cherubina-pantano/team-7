@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div id="dish">
-    <div class='header-menu d-flex justify-content-around align-items-center'>
+    <div class='header-menu d-flex justify-content-around align-items-center mt-3'>
          <div class="btn-group d-block">
             <div class="d-flex p-3 align-items-center">
                 <h4 class="text-orange mr-3">Riepilogo Ordine</h4>

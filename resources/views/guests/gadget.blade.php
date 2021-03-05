@@ -2,11 +2,11 @@
 
 @section('content')
 
-  <div class="title-gadget">
+  <div class="title-gadget mt-3">
         <h1>I Nostri Gadget</h1>
     </div>
 
-<div class="container-gadget">
+<div class="container-gadget ">
 
     <div class="wrapper-gadget">
 

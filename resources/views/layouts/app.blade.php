@@ -21,13 +21,13 @@
 <body>
         <nav class="navbar navbar-expand-md container-dark shadow-sm">
             <div class="container text-orange">
-                <a class="navbar-brand text-orange" href="{{ url('/') }}">
+                <a class="navbar-brand text-navbar" href="{{ url('/') }}">
                     Fast&Food
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler text-navbar" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon text-navbar"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse text-navbar " id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                     </ul>
@@ -36,27 +36,27 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
-                            <a class="nav-link text-orange" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link text-navbar" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link text-orange" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link text-navbar" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         @endif
                         @else
                         <li class='nav-item'>
-                            <a class='nav-link text-orange' href="{{route('admin.home')}}">Dashboard</a>
+                            <a class='nav-link text-navbar' href="{{route('admin.home')}}">Dashboard</a>
                         </li>
                         {{-- <li class='nav-item'>
                             <a class='nav-link' href="{{route('admin.restaurants.index')}}">Indice Ristoranti</a>
                         </li> --}}
 
                         <li class='nav-item'>
-                            <a class='nav-link text-orange' href="{{route('admin.restaurants.create')}}">Crea nuovo Ristorante</a>
+                            <a class='nav-link text-navbar' href="{{route('admin.restaurants.create')}}">Crea nuovo Ristorante</a>
                         </li>
-                        
+
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-orange" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-navbar" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
