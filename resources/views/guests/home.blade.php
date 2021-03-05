@@ -11,12 +11,12 @@
 
     {{-- header-hero  --}}
         <header class="header">
-             <div class="container  text-right">
+             {{-- <div class="container  text-right">
                  <button class="btn btn-primary" data-toggle="modal" data-target="#cart">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge badge-light"></span>
                 </button>
-            </div>
+            </div> --}}
 
             <div class="hero">
                 <img src="images/logo-2.png" alt="logo">

@@ -2,11 +2,11 @@
 
 @section('content')
 <div id="app" >
-    <div class='index'>
+    <div class='index mt-3'>
         <div class="container pt-4 text-center">
              <h3 class="text-orange">Ricerca Ristorante</h3>
 
-             <input class='ricerca rounded-pill border-0 p-1 mb-2' type="text" name="name" id="name"
+             <input class='ricerca rounded-pill border-0 p-1 mb-2 ' type="text" name="name" id="name"
              v-model="name" v-on:keyup="filterType">
 
              <h3 class='pt-4 text-orange'> Scegli Tipologia </h3>

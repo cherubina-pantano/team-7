@@ -7,7 +7,7 @@
                     <div class="footer-col">
                         <h4>La Nostra Azienda</h4>
                             <ul>
-                                <li> <a href=""> About Us </a> </li>
+                                <li> <a href="{{ route('azienda') }}"> La Nostra Azienda </a> </li>
                                 <li> <a href=""> I Nostri Servizi</a> </li>
                                 <li> <a href="{{ route('partners') }}">Aziende Partner</a> </li>
                                 <li> <a href="">Novità</a> </li>
