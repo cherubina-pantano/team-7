@@ -38,7 +38,7 @@ class ApiController extends Controller
          $search = DB::table('restaurants')
                  ->join('restaurant_type', 'restaurants.id', '=', 'restaurant_type.restaurant_id')
                  ->join('types', 'types.id', '=','restaurant_type.type_id')
-                 ->whereIn('types.type', $data['types'])->select('restaurants.id', 'restaurants.name')
+                 ->whereIn('types.type', $data['types'])->select('restaurants.id', 'restaurants.name','restaurants.address', 'restaurants.phone')
                  ->distinct()
                  ->get();
         }
@@ -49,7 +49,7 @@ class ApiController extends Controller
                  ->join('types', 'types.id', '=','restaurant_type.type_id')
                  ->where('name', 'like', "%$name%")
                  ->whereIn('types.type', $data['types'])
-                 ->select('restaurants.id', 'restaurants.name')
+                 ->select('restaurants.id', 'restaurants.name','restaurants.address', 'restaurants.phone')
                  ->distinct()
                  ->get();
         }
@@ -61,7 +61,7 @@ class ApiController extends Controller
         $data = $request->all();
 
         $dishes_search = DB::table('dishes')
-        ->where('restaurant_id', '=', $data['id'])        
+        ->where('restaurant_id', '=', $data['id'])
         ->select('dishes.id', 'dishes.name', 'dishes.restaurant_id', 'dishes.description', 'dishes.ingredients','dishes.path_img', 'dishes.price', 'dishes.available')
         ->orderBy('dishes.name')
         ->get();
